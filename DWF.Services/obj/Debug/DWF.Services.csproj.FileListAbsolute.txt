@@ -1,0 +1,16 @@
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Services\bin\Debug\DWF.Services.dll
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Services\bin\Debug\DWF.Services.pdb
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Services\obj\Debug\DWF.Services.csprojAssemblyReference.cache
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Services\obj\Debug\DWF.Services.csproj.CoreCompileInputs.cache
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Services\obj\Debug\DWF.Services.dll
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Services\obj\Debug\DWF.Services.pdb
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Services\bin\Debug\DWF.Services.dll.config
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Services\bin\Debug\EntityFramework.dll
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Services\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Services\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Services\bin\Debug\EntityFramework.xml
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Services\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Services\obj\Debug\DWF.Services.csproj.CopyComplete

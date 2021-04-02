@@ -1,0 +1,16 @@
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Contracts\bin\Debug\DWF.Contracts.dll
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Contracts\bin\Debug\DWF.Contracts.pdb
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Contracts\obj\Debug\DWF.Contracts.csprojAssemblyReference.cache
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Contracts\obj\Debug\DWF.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Contracts\obj\Debug\DWF.Contracts.dll
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Contracts\obj\Debug\DWF.Contracts.pdb
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Contracts\bin\Debug\DWF.Contracts.dll.config
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Contracts\bin\Debug\EntityFramework.dll
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Contracts\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Contracts\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Contracts\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Contracts\bin\Debug\EntityFramework.xml
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Contracts\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Contracts\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Contracts\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Contracts\obj\Debug\DWF.Contracts.csproj.CopyComplete
