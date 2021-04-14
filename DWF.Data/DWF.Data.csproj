@@ -55,12 +55,52 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Player.cs" />
+    <Compile Include="Match.cs" />
+    <Compile Include="MatchSetup.cs" />
+    <Compile Include="Migrations\202104132244545_InitialMigration.cs" />
+    <Compile Include="Migrations\202104132244545_InitialMigration.Designer.cs">
+      <DependentUpon>202104132244545_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104132247502_SecondMigration.cs" />
+    <Compile Include="Migrations\202104132247502_SecondMigration.Designer.cs">
+      <DependentUpon>202104132247502_SecondMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104132251094_AddedDbSets.cs" />
+    <Compile Include="Migrations\202104132251094_AddedDbSets.Designer.cs">
+      <DependentUpon>202104132251094_AddedDbSets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104132305418_ChangedConnectionString.cs" />
+    <Compile Include="Migrations\202104132305418_ChangedConnectionString.Designer.cs">
+      <DependentUpon>202104132305418_ChangedConnectionString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104140011210_IntegratedPlayerIntoIdentityUser.cs" />
+    <Compile Include="Migrations\202104140011210_IntegratedPlayerIntoIdentityUser.Designer.cs">
+      <DependentUpon>202104140011210_IntegratedPlayerIntoIdentityUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Round.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202104132244545_InitialMigration.resx">
+      <DependentUpon>202104132244545_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104132247502_SecondMigration.resx">
+      <DependentUpon>202104132247502_SecondMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104132251094_AddedDbSets.resx">
+      <DependentUpon>202104132251094_AddedDbSets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104132305418_ChangedConnectionString.resx">
+      <DependentUpon>202104132305418_ChangedConnectionString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104140011210_IntegratedPlayerIntoIdentityUser.resx">
+      <DependentUpon>202104140011210_IntegratedPlayerIntoIdentityUser.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

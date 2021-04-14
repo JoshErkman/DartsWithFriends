@@ -11,9 +11,9 @@ namespace DWF.Data
     {
         public int MatchSetupId { get; set; }
 
-        [ForeignKey (nameof(Player))]
-        public int PlayerId { get; set; }
-        public virtual Player Player { get; set; }
+       [ForeignKey (nameof(User))]
+        public string PlayerId { get; set; }
+       public virtual ApplicationUser User { get; set; }
 
         public int NumberOfSets { get; set; }
         public int NumberOfLegs { get; set; }

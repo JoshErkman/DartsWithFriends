@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
@@ -18,6 +19,18 @@ namespace DWF.Data
             // Add custom user claims here
             return userIdentity;
         }
+
+        [Required]
+        public string FirstName { get; set; }
+
+        [Required]
+        public string LastName { get; set; }
+        //public List<Match> Matches { get; set; }
+        //public List<Stats> Statistics { get; set; }
+        public int FiveOOne_AvgBest { get; set; }
+        public int FiveOOne_AvgWorst { get; set; }
+        public int CheckOutBest { get; set; }
+        public int CheckOutWorst { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -32,7 +45,9 @@ namespace DWF.Data
             return new ApplicationDbContext();
         }
 
-        public DbSet<Player> Players { get; set; }
+        public DbSet<MatchSetup> MatchSetups { get; set; }
+        public DbSet<Match> Matches { get; set; }
+        public DbSet<Round> Rounds { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder

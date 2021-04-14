@@ -14,3 +14,9 @@ C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\bin\Debug\Micr
 C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\obj\Debug\DWF.Data.csproj.CopyComplete
 C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\obj\Debug\DWF.Data.dll
 C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\obj\Debug\DWF.Data.pdb
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\obj\Debug\DWF.Data.Migrations.InitialMigration.resources
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\obj\Debug\DWF.Data.csproj.GenerateResource.cache
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\obj\Debug\DWF.Data.Migrations.SecondMigration.resources
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\obj\Debug\DWF.Data.Migrations.AddedDbSets.resources
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\obj\Debug\DWF.Data.Migrations.ChangedConnectionString.resources
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\obj\Debug\DWF.Data.Migrations.IntegratedPlayerIntoIdentityUser.resources

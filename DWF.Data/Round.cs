@@ -10,6 +10,7 @@ namespace DWF.Data
     public class Round
     {
         public int RoundId { get; set; }
+
         public int Score { get; set; }
 
         [ForeignKey (nameof(Match))]
