@@ -7,13 +7,13 @@ namespace DWF.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class AddedDbSets : IMigrationMetadata
+    public sealed partial class initCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedDbSets));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "202104132251094_AddedDbSets"; }
+            get { return "202104152309158_initCreate"; }
         }
         
         string IMigrationMetadata.Source
