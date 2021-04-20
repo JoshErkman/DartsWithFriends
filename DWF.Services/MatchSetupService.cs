@@ -12,7 +12,7 @@ namespace DWF.Services
     {
         private readonly Guid _userId;
 
-        public MatchSetupService (Guid userId)
+        public MatchSetupService(Guid userId)
         {
             _userId = userId;
         }
@@ -39,33 +39,30 @@ namespace DWF.Services
         }
 
         // GET
-        public IEnumerable<MatchSetupListItem> GetMatchSetupById(int matchSetupId)
+        public MatchSetupDetail GetMatchSetupById(int matchSetupId)
         {
-            using(var ctx = new ApplicationDbContext())
+            using (var ctx = new ApplicationDbContext())
             {
-                var query =
+                var entity =
                     ctx
                         .MatchSetups
-                        .Where(e => e.MatchSetupId == matchSetupId)
-                        .Select(
-                            e =>
-                                new MatchSetupListItem
-                                {
-                                    MatchSetupId = e.MatchSetupId,
-                                    PlayerOneId = e.PlayerOneId,
-                                    PlayerTwoId = e.PlayerTwoId,
-                                    NumberOfSets = e.NumberOfSets,
-                                    NumberOfLegs = e.NumberOfLegs
-                                }
-                           );
-                return query.ToArray();
+                        .Single(e => e.MatchSetupId == matchSetupId);
+                return
+                    new MatchSetupDetail
+                    {
+                        MatchSetupId = entity.MatchSetupId,
+                        PlayerOneId = entity.PlayerOneId,
+                        PlayerTwoId = entity.PlayerTwoId,
+                        NumberOfSets = entity.NumberOfSets,
+                        NumberOfLegs = entity.NumberOfLegs
+                    };
             }
         }
 
         //PUT
         public bool UpdateMatchSetup(MatchSetupEdit model)
         {
-            using(var ctx = new ApplicationDbContext())
+            using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx

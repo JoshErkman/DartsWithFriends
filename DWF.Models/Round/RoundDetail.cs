@@ -8,5 +8,10 @@ namespace DWF.Models.Round
 {
     public class RoundDetail
     {
+        public int RoundId { get; set; }
+
+        public int TotalPoints { get; set; }
+
+        public int MatchId { get; set; }
     }
 }
