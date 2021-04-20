@@ -14,3 +14,9 @@ C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Services\bin\Debug\
 C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Services\obj\Debug\DWF.Services.csproj.CopyComplete
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Services\bin\Debug\DWF.Data.dll
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Services\bin\Debug\DWF.Models.dll
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Services\bin\Debug\DWF.Data.pdb
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Services\bin\Debug\DWF.Data.dll.config
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Services\bin\Debug\DWF.Models.pdb
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Services\bin\Debug\DWF.Models.dll.config

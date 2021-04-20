@@ -1,20 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DWF.Data
+namespace DWF.Models
 {
-    public class Round
+    public class RoundCreate
     {
-        public int RoundId { get; set; }
-
+        [Required]
         public int TotalPoints { get; set; }
 
-        [ForeignKey (nameof(Match))]
         public int MatchId { get; set; }
-        public virtual Match Match { get; set; }
     }
 }

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DWF.Models.MatchSetup;
+using DWF.Services;
+using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,9 +18,30 @@ namespace DWF.WebMVC.Controllers
         }
 
         // GET: MatchSetup Create
-        public ActionResult MatchSetupCreate()
+        public ActionResult Create()
         {
             return View();
+        }
+
+        // POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(MatchSetupCreate model)
+        {
+            if (ModelState.IsValid)
+            {
+
+            }
+            return View(); 
+        }
+
+        // Helper Method
+        private MatchSetupService CreateMatchSetupService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+
+            var service = new MatchSetupService(userId);
+            return service;
         }
     }
 }

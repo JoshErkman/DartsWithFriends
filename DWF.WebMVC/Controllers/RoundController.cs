@@ -6,22 +6,12 @@ using System.Web.Mvc;
 
 namespace DWF.WebMVC.Controllers
 {
-    public class MatchController : Controller
+    public class RoundController : Controller
     {
-        // GET: Match
+        // GET: Round
         public ActionResult Index()
         {
             return View();
-
         }
-
-        // GET: Match
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-
-        
     }
 }

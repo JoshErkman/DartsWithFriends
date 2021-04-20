@@ -15,10 +15,12 @@ namespace DWF.Data
         public int MatchSetupId { get; set; }
         public virtual MatchSetup MatchSetup { get; set; }
 
-        public int NeededScore { get; set; }
+        public int PlayerOneNeededScore { get; set; } = 501;
+        public int PlayerTwoNeededScore { get; set; } = 501;
         public int SetScore { get; set; }
         public int LegScore { get; set; }
-        public int AvgRoundScore { get; set; }
+        public int PlayerOneAvgRoundScore { get; set; }
+        public int PlayerTwoAvgRoundScore { get; set; }
         // public int Stats { get; set; }
     }
 }

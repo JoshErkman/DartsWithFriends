@@ -7,13 +7,13 @@ namespace DWF.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class initCreate : IMigrationMetadata
+    public sealed partial class initialMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initialMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202104152309158_initCreate"; }
+            get { return "202104192244581_initialMigration"; }
         }
         
         string IMigrationMetadata.Source
