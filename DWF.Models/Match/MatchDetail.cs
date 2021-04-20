@@ -8,5 +8,11 @@ namespace DWF.Models.Match
 {
     public class MatchDetail
     {
+        public int MatchId { get; set; }
+        public int MatchSetupId { get; set; }
+        public int SetScore { get; set; }
+        public int LegScore { get; set; }
+        public int PlayerOneAvgRoundScore { get; set; }
+        public int PlayerTwoAvgRoundScore { get; set; }
     }
 }
