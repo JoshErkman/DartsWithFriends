@@ -1,0 +1,42 @@
+﻿@model DWF.Models.Round.RoundDetail
+
+@{
+    ViewBag.Title = "RoundDetails";
+}
+
+<h2>RoundDetails</h2>
+
+<div>
+    <h4>RoundDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RoundId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoundId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalPoints)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalPoints)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MatchId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MatchId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

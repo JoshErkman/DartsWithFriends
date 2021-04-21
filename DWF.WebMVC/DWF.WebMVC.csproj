@@ -237,12 +237,16 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\MatchSetup\Create.cshtml" />
-    <Content Include="Views\Match\Create.cshtml" />
+    <Content Include="Views\Round\CreateRound.cshtml" />
+    <Content Include="Views\Round\RoundDetails.cshtml" />
+    <Content Include="Views\Round\RoundEdit.cshtml" />
+    <Content Include="Views\Round\DeleteRound.cshtml" />
+    <Content Include="Views\Round\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Round\" />
+    <Folder Include="Views\MatchSetup\" />
+    <Folder Include="Views\Match\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

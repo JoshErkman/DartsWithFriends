@@ -27,13 +27,22 @@ namespace DWF.WebMVC.Controllers
         // POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(MatchSetupCreate model)
+        public ActionResult CreateMatchSetup(MatchSetupCreate model)
         {
-            if (ModelState.IsValid)
-            {
+            if (!ModelState.IsValid)
+                return View(model);
 
+            var svc = CreateMatchSetupService();
+
+            if (svc.CreateMatchSetup(model))
+            {
+                TempData["SaveResult"] = "Your match setup was created.";
+                return RedirectToAction("Index");
             }
-            return View(); 
+
+            ModelState.AddModelError("", "The match setup could not be created.");
+
+            return View(model);
         }
 
         // GET: MatchSetup Details View

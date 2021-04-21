@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DWF.Services
 {
-    class RoundService
+    public class RoundService
     {
         // POST
         public bool CreateRound(RoundCreate model)
@@ -29,7 +29,29 @@ namespace DWF.Services
             }
         }
 
-        // GET
+        // GET ALL
+        public IEnumerable<RoundListItem> GetRounds()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Rounds
+                        .Select(
+                            e =>
+                                new RoundListItem
+                                {
+                                    RoundId = e.RoundId,
+                                    MatchId = e.MatchId,
+                                    TotalPoints = e.TotalPoints
+                                }
+                        );
+
+                return query.ToArray();
+            }
+        }
+
+        // GET (by Id)
         public RoundDetail GetRoundById(int roundId)
         {
             using (var ctx = new ApplicationDbContext())
