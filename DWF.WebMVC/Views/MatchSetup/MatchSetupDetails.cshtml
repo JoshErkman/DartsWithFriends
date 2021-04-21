@@ -1,0 +1,58 @@
+﻿@model DWF.Models.MatchSetup.MatchSetupDetail
+
+@{
+    ViewBag.Title = "MatchSetupDetails";
+}
+
+<h2>MatchSetupDetails</h2>
+
+<div>
+    <h4>MatchSetupDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MatchSetupId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MatchSetupId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlayerOneId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlayerOneId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlayerTwoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlayerTwoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfSets)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfSets)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfLegs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfLegs)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

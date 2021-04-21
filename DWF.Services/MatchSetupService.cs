@@ -38,7 +38,32 @@ namespace DWF.Services
             }
         }
 
-        // GET
+        // GET (all)
+        public IEnumerable<MatchSetupListItem> GetMatchSetups()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .MatchSetups
+                        .Where(e => e.PlayerOneId == _userId.ToString())
+                        .Select(
+                            e =>
+                                new MatchSetupListItem
+                                {
+                                    MatchSetupId = e.MatchSetupId,
+                                    PlayerOneId = e.PlayerOneId,
+                                    PlayerTwoId = e.PlayerTwoId,
+                                    NumberOfSets = e.NumberOfSets,
+                                    NumberOfLegs = e.NumberOfLegs
+                                }
+                            );
+
+                return query.ToArray();
+            }
+        }
+
+        // GET (by Id)
         public MatchSetupDetail GetMatchSetupById(int matchSetupId)
         {
             using (var ctx = new ApplicationDbContext())

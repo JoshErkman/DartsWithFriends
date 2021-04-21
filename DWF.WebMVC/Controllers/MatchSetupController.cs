@@ -15,7 +15,10 @@ namespace DWF.WebMVC.Controllers
         // GET: MatchSetup
         public ActionResult Index()
         {
-            return View();
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var svc = new MatchSetupService(userId);
+            var model = svc.GetMatchSetups();
+            return View(model);
         }
 
         // GET: MatchSetup Create view

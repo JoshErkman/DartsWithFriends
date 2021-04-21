@@ -242,10 +242,14 @@
     <Content Include="Views\Round\RoundEdit.cshtml" />
     <Content Include="Views\Round\DeleteRound.cshtml" />
     <Content Include="Views\Round\Index.cshtml" />
+    <Content Include="Views\MatchSetup\Index.cshtml" />
+    <Content Include="Views\MatchSetup\Create.cshtml" />
+    <Content Include="Views\MatchSetup\MatchSetupDetails.cshtml" />
+    <Content Include="Views\MatchSetup\MatchSetupEdit.cshtml" />
+    <Content Include="Views\MatchSetup\DeleteMatchSetup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\MatchSetup\" />
     <Folder Include="Views\Match\" />
   </ItemGroup>
   <ItemGroup>

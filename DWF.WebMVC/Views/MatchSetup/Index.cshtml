@@ -1,0 +1,57 @@
+﻿@model IEnumerable<DWF.Models.MatchSetup.MatchSetupListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MatchSetupId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlayerOneId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlayerTwoId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberOfSets)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberOfLegs)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MatchSetupId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlayerOneId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlayerTwoId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberOfSets)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberOfLegs)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

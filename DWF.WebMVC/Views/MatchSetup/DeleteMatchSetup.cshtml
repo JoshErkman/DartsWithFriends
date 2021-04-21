@@ -1,0 +1,64 @@
+﻿@model DWF.Models.MatchSetup.MatchSetupDetail
+
+@{
+    ViewBag.Title = "DeleteMatchSetup";
+}
+
+<h2>DeleteMatchSetup</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>MatchSetupDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MatchSetupId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MatchSetupId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlayerOneId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlayerOneId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlayerTwoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlayerTwoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfSets)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfSets)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfLegs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfLegs)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
