@@ -22,7 +22,8 @@ namespace DWF.WebMVC.Controllers
         }
 
         // GET: MatchSetup Create view
-        public ActionResult Create()
+        [ActionName("Create")]
+        public ActionResult CreateMatchSetup()
         {
             return View();
         }
@@ -30,6 +31,7 @@ namespace DWF.WebMVC.Controllers
         // POST
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ActionName("Create")]
         public ActionResult CreateMatchSetup(MatchSetupCreate model)
         {
             if (!ModelState.IsValid)

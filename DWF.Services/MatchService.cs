@@ -35,7 +35,34 @@ namespace DWF.Services
             }
         }
         
-        // GET
+        // GET (all)
+        public IEnumerable<MatchListItem> GetMatches()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Matches
+                        .Select(
+                            e =>
+                                new MatchListItem
+                                {
+                                    MatchId = e.MatchId,
+                                    MatchSetupId = e.MatchSetupId,
+                                    PlayerOneNeededScore = e.PlayerOneNeededScore,
+                                    PlayerTwoNeededScore = e.PlayerTwoNeededScore,
+                                    SetScore = e.SetScore,
+                                    LegScore = e.LegScore,
+                                    PlayerOneAvgRoundScore = e.PlayerOneAvgRoundScore,
+                                    PlayerTwoAvgRoundScore = e.PlayerTwoAvgRoundScore
+                                }
+                        );
+
+                return query.ToArray();
+            }
+        }
+
+        // GET (by id)
         public MatchDetail GetMatchById(int matchId)
         {
             using (var ctx = new ApplicationDbContext())

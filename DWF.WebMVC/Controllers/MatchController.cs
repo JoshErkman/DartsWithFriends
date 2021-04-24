@@ -15,8 +15,9 @@ namespace DWF.WebMVC.Controllers
         // GET: Match
         public ActionResult Index()
         {
+            var svc = new MatchService();
+            var model = svc.GetMatches();
             return View();
-
         }
 
         // GET: Match View

@@ -247,10 +247,14 @@
     <Content Include="Views\MatchSetup\MatchSetupDetails.cshtml" />
     <Content Include="Views\MatchSetup\MatchSetupEdit.cshtml" />
     <Content Include="Views\MatchSetup\DeleteMatchSetup.cshtml" />
+    <Content Include="Views\Match\Index.cshtml" />
+    <Content Include="Views\Match\CreateMatch.cshtml" />
+    <Content Include="Views\Match\MatchDetails.cshtml" />
+    <Content Include="Views\Match\MatchEdit.cshtml" />
+    <Content Include="Views\Match\DeleteMatch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Match\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
