@@ -1,4 +1,5 @@
 ﻿using DWF.Data;
+using DWF.Models;
 using DWF.Models.MatchSetup;
 using System;
 using System.Collections.Generic;
@@ -35,6 +36,46 @@ namespace DWF.Services
 
                 ctx.MatchSetups.Add(entity);
                 return ctx.SaveChanges() == 1;
+            }
+        }
+
+       // public IEnumerable<UserInfo> GetUsers()
+       // {
+       //     using (var ctx = new ApplicationDbContext())
+       //     {
+       //         var query =
+       //             ctx
+       //                 .Users
+       //                 .Where(e => e.Id == e.Id)
+       //                 .Select(
+       //                     e =>
+       //                     new UserInfo
+       //                     {
+       //                         Email = e.Email
+       //                     }
+       //                 );
+       //
+       //         return query.ToList();
+       //     }
+       // }
+
+        public IEnumerable<UserInfo> GetUsers()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Users
+                        .Where(e => e.Id == e.Id)
+                        .Select(
+                            e =>
+                            new UserInfo
+                            {
+                                Email = e.Email
+                            }
+                        );
+
+                return query.ToList();
             }
         }
 

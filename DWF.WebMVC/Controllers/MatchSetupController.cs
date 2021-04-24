@@ -10,8 +10,11 @@ using System.Web.Mvc;
 
 namespace DWF.WebMVC.Controllers
 {
+
     public class MatchSetupController : Controller
     {
+        private ApplicationDbContext _db = new ApplicationDbContext();
+
         // GET: MatchSetup
         public ActionResult Index()
         {
@@ -21,10 +24,45 @@ namespace DWF.WebMVC.Controllers
             return View(model);
         }
 
+      // // GET: MatchSetup Create view
+      // [ActionName("Create")]
+      // public ActionResult CreateMatchSetup()
+      // {
+      //     var svc = CreateMatchSetupService();
+      //     var userList = svc.GetUsers();
+      //     List<SelectListItem> selectList = new List<SelectListItem>();
+      //     foreach (var user in userList)
+      //     {
+      //         var item =
+      //         new SelectListItem()
+      //         {
+      //             Text = user.Email
+      //         };
+      //
+      //         selectList.Add(item);
+      //     }
+      //     ViewBag.Users = selectList;
+      //     return View();
+      // }
+
         // GET: MatchSetup Create view
         [ActionName("Create")]
         public ActionResult CreateMatchSetup()
         {
+            var svc = CreateMatchSetupService();
+            var userList = svc.GetUsers();
+            List<SelectListItem> selectList = new List<SelectListItem>();
+           foreach(var user in userList)
+           {
+               var item = 
+               new SelectListItem()
+               {
+                   Text = user.Email
+               };
+          
+               selectList.Add(item);
+           }
+            ViewBag.Users = selectList;
             return View();
         }
 
