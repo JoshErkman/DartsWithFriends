@@ -24,47 +24,35 @@ namespace DWF.WebMVC.Controllers
             return View(model);
         }
 
-      // // GET: MatchSetup Create view
-      // [ActionName("Create")]
-      // public ActionResult CreateMatchSetup()
-      // {
-      //     var svc = CreateMatchSetupService();
-      //     var userList = svc.GetUsers();
-      //     List<SelectListItem> selectList = new List<SelectListItem>();
-      //     foreach (var user in userList)
-      //     {
-      //         var item =
-      //         new SelectListItem()
-      //         {
-      //             Text = user.Email
-      //         };
-      //
-      //         selectList.Add(item);
-      //     }
-      //     ViewBag.Users = selectList;
-      //     return View();
-      // }
+       // GET: MatchSetup Create view
+       [ActionName("Create")]
+       public ActionResult CreateMatchSetup()
+       {
+            return View();
+       }
 
         // GET: MatchSetup Create view
-        [ActionName("Create")]
-        public ActionResult CreateMatchSetup()
-        {
-            var svc = CreateMatchSetupService();
-            var userList = svc.GetUsers();
-            List<SelectListItem> selectList = new List<SelectListItem>();
-           foreach(var user in userList)
-           {
-               var item = 
-               new SelectListItem()
-               {
-                   Text = user.Email
-               };
-          
-               selectList.Add(item);
-           }
-            ViewBag.Users = selectList;
-            return View();
-        }
+       // [ActionName("Create")]
+       // public ActionResult CreateMatchSetup()
+       // {
+       //     var svc = CreateMatchSetupService();
+       //     var userList = svc.GetUsers();
+       //     List<SelectListItem> users = new List<SelectListItem>();
+       //    foreach(var user in userList)
+       //    {
+       //        //var item = 
+       //        users.Add(new SelectListItem()
+       //        {
+       //            Text = user.Email,
+       //            Value = user.Id
+       //        });
+       //   
+       //       // users.Add(item);
+       //    }
+       //    ViewBag.Id = users;
+       //    // ViewBag.Email = new SelectList(userList);
+       //     return View();
+       // }
 
         // POST
         [HttpPost]
@@ -77,6 +65,12 @@ namespace DWF.WebMVC.Controllers
 
             var svc = CreateMatchSetupService();
 
+          if (!svc.ValidateEmail(model))
+          {
+              ModelState.AddModelError("", "This email does not exist.");
+              return View(model);
+          }
+
             if (svc.CreateMatchSetup(model))
             {
                 TempData["SaveResult"] = "Your match setup was created.";
@@ -85,7 +79,7 @@ namespace DWF.WebMVC.Controllers
 
             ModelState.AddModelError("", "The match setup could not be created.");
 
-            return View(model);
+            return RedirectToAction("Index", model);
         }
 
         // GET: MatchSetup Details View

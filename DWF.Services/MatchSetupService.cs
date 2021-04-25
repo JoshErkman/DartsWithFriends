@@ -23,41 +23,67 @@ namespace DWF.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                ApplicationUser opponent = ctx.Users.Single(e => e.UserName == model.OpponentEmail);
+                try
+               {
 
-                var entity =
-                    new MatchSetup()
-                    {
-                        PlayerOneId = _userId.ToString(),
-                        PlayerTwoId = opponent.Id,
-                        NumberOfSets = model.NumberOfSets,
-                        NumberOfLegs = model.NumberOfLegs
-                    };
+                    ApplicationUser opponent = ctx.Users.Single(e => e.UserName == model.OpponentEmail);
 
-                ctx.MatchSetups.Add(entity);
-                return ctx.SaveChanges() == 1;
+                    var entity =
+                        new MatchSetup()
+                        {
+                            PlayerOneId = _userId.ToString(),
+                            PlayerTwoId = opponent.Id,
+                            NumberOfSets = model.NumberOfSets,
+                            NumberOfLegs = model.NumberOfLegs
+                        };
+
+                    ctx.MatchSetups.Add(entity);
+                    return ctx.SaveChanges() == 1;
+                }
+
+                catch(InvalidOperationException e)
+                {
+                    return false;
+                }
             }
         }
 
-       // public IEnumerable<UserInfo> GetUsers()
-       // {
-       //     using (var ctx = new ApplicationDbContext())
-       //     {
-       //         var query =
-       //             ctx
-       //                 .Users
-       //                 .Where(e => e.Id == e.Id)
-       //                 .Select(
-       //                     e =>
-       //                     new UserInfo
-       //                     {
-       //                         Email = e.Email
-       //                     }
-       //                 );
-       //
-       //         return query.ToList();
-       //     }
-       // }
+        // public IEnumerable<UserInfo> GetUsers()
+        // {
+        //     using (var ctx = new ApplicationDbContext())
+        //     {
+        //         var query =
+        //             ctx
+        //                 .Users
+        //                 .Where(e => e.Id == e.Id)
+        //                 .Select(
+        //                     e =>
+        //                     new UserInfo
+        //                     {
+        //                         Email = e.Email
+        //                     }
+        //                 );
+        //
+        //         return query.ToList();
+        //     }
+        // }
+
+        public bool ValidateEmail(MatchSetupCreate model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                try
+                {
+                    ApplicationUser opponent = ctx.Users.Single(e => e.UserName == model.OpponentEmail);
+                    return true;
+                }
+
+                catch (InvalidOperationException)
+                {
+                    return false;
+                }
+            }
+        }
 
         public IEnumerable<UserInfo> GetUsers()
         {
@@ -71,6 +97,7 @@ namespace DWF.Services
                             e =>
                             new UserInfo
                             {
+                                Id = e.Id,
                                 Email = e.Email
                             }
                         );
