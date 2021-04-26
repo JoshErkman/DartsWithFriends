@@ -244,9 +244,9 @@
     <Content Include="Views\Round\Index.cshtml" />
     <Content Include="Views\MatchSetup\Index.cshtml" />
     <Content Include="Views\MatchSetup\Create.cshtml" />
-    <Content Include="Views\MatchSetup\MatchSetupDetails.cshtml" />
-    <Content Include="Views\MatchSetup\MatchSetupEdit.cshtml" />
-    <Content Include="Views\MatchSetup\DeleteMatchSetup.cshtml" />
+    <Content Include="Views\MatchSetup\Details.cshtml" />
+    <Content Include="Views\MatchSetup\Edit.cshtml" />
+    <Content Include="Views\MatchSetup\Delete.cshtml" />
     <Content Include="Views\Match\Index.cshtml" />
     <Content Include="Views\Match\CreateMatch.cshtml" />
     <Content Include="Views\Match\MatchDetails.cshtml" />

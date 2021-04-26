@@ -24,7 +24,7 @@ namespace DWF.Services
             using (var ctx = new ApplicationDbContext())
             {
                 try
-               {
+                {
 
                     ApplicationUser opponent = ctx.Users.Single(e => e.UserName == model.OpponentEmail);
 
@@ -41,32 +41,12 @@ namespace DWF.Services
                     return ctx.SaveChanges() == 1;
                 }
 
-                catch(InvalidOperationException e)
+                catch (InvalidOperationException e)
                 {
                     return false;
                 }
             }
         }
-
-        // public IEnumerable<UserInfo> GetUsers()
-        // {
-        //     using (var ctx = new ApplicationDbContext())
-        //     {
-        //         var query =
-        //             ctx
-        //                 .Users
-        //                 .Where(e => e.Id == e.Id)
-        //                 .Select(
-        //                     e =>
-        //                     new UserInfo
-        //                     {
-        //                         Email = e.Email
-        //                     }
-        //                 );
-        //
-        //         return query.ToList();
-        //     }
-        // }
 
         public bool ValidateEmail(MatchSetupCreate model)
         {
@@ -132,38 +112,46 @@ namespace DWF.Services
         }
 
         // GET (by Id)
-        public MatchSetupDetail GetMatchSetupById(int matchSetupId)
+        public MatchSetupDetail GetMatchSetupById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .MatchSetups
-                        .Single(e => e.MatchSetupId == matchSetupId);
+                        .Single(e => e.MatchSetupId == id);
+
+                ApplicationUser playerOne = ctx.Users.Single(e => e.Id == entity.PlayerOneId);
+                ApplicationUser playerTwo = ctx.Users.Single(e => e.Id == entity.PlayerTwoId);
+
                 return
                     new MatchSetupDetail
                     {
                         MatchSetupId = entity.MatchSetupId,
-                        PlayerOneId = entity.PlayerOneId,
-                        PlayerTwoId = entity.PlayerTwoId,
+                        PlayerOneEmail = playerOne.UserName,
+                        PlayerTwoEmail = playerTwo.UserName,
                         NumberOfSets = entity.NumberOfSets,
                         NumberOfLegs = entity.NumberOfLegs
                     };
             }
         }
 
+        // EDIT
         //PUT
         public bool UpdateMatchSetup(MatchSetupEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
+                ApplicationUser playerOne = ctx.Users.Single(e => e.UserName == model.PlayerOneEmail);
+                ApplicationUser playerTwo = ctx.Users.Single(e => e.UserName == model.PlayerTwoEmail);
+
                 var entity =
                     ctx
                         .MatchSetups
                         .Single(e => e.MatchSetupId == model.MatchSetupId);
 
-                entity.PlayerOneId = model.PlayerOneId;
-                entity.PlayerTwoId = model.PlayerTwoId;
+                entity.PlayerOneId = playerOne.Id;
+                entity.PlayerTwoId = playerTwo.Id;
                 entity.NumberOfSets = model.NumberOfSets;
                 entity.NumberOfLegs = model.NumberOfLegs;
 
@@ -172,14 +160,14 @@ namespace DWF.Services
         }
 
         // DELETE
-        public bool DeleteMatchSetup(int matchSetupId)
+        public bool DeleteMatchSetup(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .MatchSetups
-                        .Single(e => e.MatchSetupId == matchSetupId);
+                        .Single(e => e.MatchSetupId == id);
 
                 ctx.MatchSetups.Remove(entity);
 

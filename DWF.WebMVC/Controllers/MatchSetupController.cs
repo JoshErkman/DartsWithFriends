@@ -31,29 +31,6 @@ namespace DWF.WebMVC.Controllers
             return View();
        }
 
-        // GET: MatchSetup Create view
-       // [ActionName("Create")]
-       // public ActionResult CreateMatchSetup()
-       // {
-       //     var svc = CreateMatchSetupService();
-       //     var userList = svc.GetUsers();
-       //     List<SelectListItem> users = new List<SelectListItem>();
-       //    foreach(var user in userList)
-       //    {
-       //        //var item = 
-       //        users.Add(new SelectListItem()
-       //        {
-       //            Text = user.Email,
-       //            Value = user.Id
-       //        });
-       //   
-       //       // users.Add(item);
-       //    }
-       //    ViewBag.Id = users;
-       //    // ViewBag.Email = new SelectList(userList);
-       //     return View();
-       // }
-
         // POST
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -83,25 +60,29 @@ namespace DWF.WebMVC.Controllers
         }
 
         // GET: MatchSetup Details View
-        public ActionResult MatchSetupDetails(int matchSetupId)
+        [ActionName("Details")]
+        public ActionResult MatchSetupDetails(int id)
         {
+
             var svc = CreateMatchSetupService();
-            var model = svc.GetMatchSetupById(matchSetupId);
+            var model = svc.GetMatchSetupById(id);
 
             return View(model);
         }
 
         // GET: MatchSetup Edit View
-        public ActionResult MatchSetupEdit(int matchSetupId)
+
+        [ActionName("Edit")]
+        public ActionResult MatchSetupEdit(int id)
         {
             var svc = CreateMatchSetupService();
-            var detail = svc.GetMatchSetupById(matchSetupId);
+            var detail = svc.GetMatchSetupById(id);
             var model =
                 new MatchSetupEdit
                 {
                     MatchSetupId = detail.MatchSetupId,
-                    PlayerOneId = detail.PlayerOneId,
-                    PlayerTwoId = detail.PlayerTwoId,
+                    PlayerOneEmail = detail.PlayerOneEmail,
+                    PlayerTwoEmail = detail.PlayerTwoEmail,
                     NumberOfSets = detail.NumberOfSets,
                     NumberOfLegs = detail.NumberOfLegs
                 };
@@ -112,6 +93,7 @@ namespace DWF.WebMVC.Controllers
         // POST
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ActionName("Edit")]
         public ActionResult MatchSetupEdit(int matchSetupId, MatchSetupEdit model)
         {
             if (!ModelState.IsValid)
@@ -136,10 +118,11 @@ namespace DWF.WebMVC.Controllers
         }
 
         // GET Delete View
-        public ActionResult DeleteMatchSetup(int matchSetupId)
+        [ActionName("Delete")]
+        public ActionResult DeleteMatchSetup(int id)
         {
             var svc = CreateMatchSetupService();
-            var model = svc.GetMatchSetupById(matchSetupId);
+            var model = svc.GetMatchSetupById(id);
 
             return View(model);
         }
@@ -148,11 +131,11 @@ namespace DWF.WebMVC.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int matchSetupId)
+        public ActionResult Delete(int id)
         {
             var svc = CreateMatchSetupService();
 
-            svc.DeleteMatchSetup(matchSetupId);
+            svc.DeleteMatchSetup(id);
             TempData["SaveResult"] = "Your match setup was deleted.";
 
             return RedirectToAction("Index");
