@@ -237,10 +237,10 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Round\CreateRound.cshtml" />
-    <Content Include="Views\Round\RoundDetails.cshtml" />
-    <Content Include="Views\Round\RoundEdit.cshtml" />
-    <Content Include="Views\Round\DeleteRound.cshtml" />
+    <Content Include="Views\Round\Create.cshtml" />
+    <Content Include="Views\Round\Details.cshtml" />
+    <Content Include="Views\Round\Edit.cshtml" />
+    <Content Include="Views\Round\Delete.cshtml" />
     <Content Include="Views\Round\Index.cshtml" />
     <Content Include="Views\MatchSetup\Index.cshtml" />
     <Content Include="Views\MatchSetup\Create.cshtml" />

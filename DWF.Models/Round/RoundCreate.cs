@@ -10,6 +10,7 @@ namespace DWF.Models
     public class RoundCreate
     {
         [Required]
+        [Range(0,180,ErrorMessage = "Total points must be between 0 and 180.")]
         public int TotalPoints { get; set; }
 
         public int MatchId { get; set; }

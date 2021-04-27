@@ -68,7 +68,7 @@
     <Compile Include="Round\RoundDetail.cs" />
     <Compile Include="Round\RoundEdit.cs" />
     <Compile Include="Round\RoundListItem.cs" />
-    <Compile Include="UserInfo.cs" />
+    <Compile Include="UserInfo\UserInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -19,6 +19,7 @@ namespace DWF.WebMVC.Controllers
         }
 
         // GET: Round Create View
+        [ActionName("Create")]
         public ActionResult CreateRound()
         {
             return View();
@@ -27,6 +28,7 @@ namespace DWF.WebMVC.Controllers
         // POST: Round Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ActionName("Create")]
         public ActionResult CreateRound(RoundCreate model)
         {
             if (!ModelState.IsValid)
@@ -45,19 +47,21 @@ namespace DWF.WebMVC.Controllers
             return View(model);
         }
 
-        public ActionResult RoundDetails(int roundId)
+        [ActionName("Details")]
+        public ActionResult RoundDetails(int id)
         {
             var svc = new RoundService();
-            var model = svc.GetRoundById(roundId);
+            var model = svc.GetRoundById(id);
 
             return View(model);
         }
 
         // GET: Edit View
-        public ActionResult RoundEdit(int roundId)
+        [ActionName("Edit")]
+        public ActionResult RoundEdit(int id)
         {
             var svc = new RoundService();
-            var detail = svc.GetRoundById(roundId);
+            var detail = svc.GetRoundById(id);
             var model =
                 new RoundEdit
                 {
@@ -72,12 +76,13 @@ namespace DWF.WebMVC.Controllers
         // POST:
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult RoundEdit(int roundId, RoundEdit model)
+        [ActionName("Edit")]
+        public ActionResult RoundEdit(int id, RoundEdit model)
         {
             if (!ModelState.IsValid)
                 return View(model);
 
-            if (model.RoundId != roundId)
+            if (model.RoundId != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);
@@ -95,10 +100,11 @@ namespace DWF.WebMVC.Controllers
             return View(model);
         }
 
-        public ActionResult DeleteRound(int roundId)
+        [ActionName("Delete")]
+        public ActionResult DeleteRound(int id)
         {
             var svc = new RoundService();
-            var model = svc.GetRoundById(roundId);
+            var model = svc.GetRoundById(id);
 
             return View(model);
         }
@@ -107,11 +113,11 @@ namespace DWF.WebMVC.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int roundId)
+        public ActionResult Delete(int id)
         {
             var svc = new RoundService();
 
-            svc.DeleteRound(roundId);
+            svc.DeleteRound(id);
 
             TempData["SaveResult"] = "Your round was deleted.";
 

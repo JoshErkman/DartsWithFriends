@@ -21,7 +21,7 @@ namespace DWF.Services
                     new Round()
                     {
                         TotalPoints = model.TotalPoints,
-                        MatchId = match.MatchId
+                        MatchId = model.MatchId
                     };
 
                 ctx.Rounds.Add(entity);
