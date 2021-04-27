@@ -100,8 +100,8 @@ namespace DWF.Services
                                 new MatchSetupListItem
                                 {
                                     MatchSetupId = e.MatchSetupId,
-                                    PlayerOneId = e.PlayerOneId,
-                                    PlayerTwoId = e.PlayerTwoId,
+                                    PlayerOneEmail = e.UserOne.UserName,
+                                    PlayerTwoEmail = e.UserTwo.UserName,
                                     NumberOfSets = e.NumberOfSets,
                                     NumberOfLegs = e.NumberOfLegs
                                 }

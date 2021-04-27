@@ -16,12 +16,13 @@ namespace DWF.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                MatchSetup matchSetup = ctx.MatchSetups.Single(e => e.MatchSetupId == model.MatchSetupId);
+                //MatchSetup matchSetup = ctx.MatchSetups.Single(e => e.MatchSetupId == model.MatchSetupId);
 
                 var entity =
                     new Match()
                     {
-                        MatchSetupId = matchSetup.MatchSetupId,
+                        MatchId = model.MatchId,
+                        MatchSetupId = model.MatchSetupId,
                         PlayerOneNeededScore = model.PlayerOneNeededScore,
                         PlayerTwoNeededScore = model.PlayerTwoNeededScore,
                         SetScore = model.SetScore,
@@ -77,6 +78,8 @@ namespace DWF.Services
                     {
                         MatchId = entity.MatchId,
                         MatchSetupId = entity.MatchSetupId,
+                        PlayerOneNeededScore = entity.PlayerOneNeededScore,
+                        PlayerTwoNeededScore = entity.PlayerTwoNeededScore,
                         SetScore = entity.SetScore,
                         LegScore = entity.LegScore,
                         PlayerOneAvgRoundScore = entity.PlayerOneAvgRoundScore,
@@ -95,8 +98,9 @@ namespace DWF.Services
                         .Matches
                         .Single(e => e.MatchId == model.MatchId);
 
+                entity.MatchId = model.MatchId;
                 entity.PlayerOneNeededScore = model.PlayerOneNeededScore;
-                entity.PlayerOneNeededScore = model.PlayerTwoNeededScore;
+                entity.PlayerTwoNeededScore = model.PlayerTwoNeededScore;
                 entity.SetScore = model.SetScore;
                 entity.LegScore = model.LegScore;
                 entity.PlayerOneAvgRoundScore = model.PlayerOneAvgRoundScore;

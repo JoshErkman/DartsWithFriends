@@ -17,10 +17,10 @@ namespace DWF.Data
 
         public int PlayerOneNeededScore { get; set; } = 501;
         public int PlayerTwoNeededScore { get; set; } = 501;
-        public int SetScore { get; set; }
-        public int LegScore { get; set; }
-        public int PlayerOneAvgRoundScore { get; set; }
-        public int PlayerTwoAvgRoundScore { get; set; }
+        public int SetScore { get; set; } = 0;
+        public int LegScore { get; set; } = 0;
+        public int PlayerOneAvgRoundScore { get; set; } = 0;
+        public int PlayerTwoAvgRoundScore { get; set; } = 0;
         // public int Stats { get; set; }
     }
 }

@@ -8,6 +8,7 @@ namespace DWF.Models
 {
     public class MatchCreate
     {
+        public int MatchId { get; set; }
         public int MatchSetupId { get; set; }
         public int PlayerOneNeededScore { get; set; }
         public int PlayerTwoNeededScore { get; set; }

@@ -51,7 +51,7 @@ namespace DWF.WebMVC.Controllers
             if (svc.CreateMatchSetup(model))
             {
                 TempData["SaveResult"] = "Your match setup was created.";
-                return RedirectToAction("Index");
+                return RedirectToAction("Create", "Match");
             }
 
             ModelState.AddModelError("", "The match setup could not be created.");

@@ -248,10 +248,10 @@
     <Content Include="Views\MatchSetup\Edit.cshtml" />
     <Content Include="Views\MatchSetup\Delete.cshtml" />
     <Content Include="Views\Match\Index.cshtml" />
-    <Content Include="Views\Match\CreateMatch.cshtml" />
-    <Content Include="Views\Match\MatchDetails.cshtml" />
-    <Content Include="Views\Match\MatchEdit.cshtml" />
-    <Content Include="Views\Match\DeleteMatch.cshtml" />
+    <Content Include="Views\Match\Create.cshtml" />
+    <Content Include="Views\Match\Details.cshtml" />
+    <Content Include="Views\Match\Edit.cshtml" />
+    <Content Include="Views\Match\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

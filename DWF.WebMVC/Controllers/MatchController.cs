@@ -17,10 +17,11 @@ namespace DWF.WebMVC.Controllers
         {
             var svc = new MatchService();
             var model = svc.GetMatches();
-            return View();
+            return View(model);
         }
 
         // GET: Match View
+        [ActionName("Create")]
         public ActionResult CreateMatch()
         {
             return View();
@@ -29,6 +30,7 @@ namespace DWF.WebMVC.Controllers
         // POST
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ActionName("Create")]
         public ActionResult CreateMatch(MatchCreate model)
         {
             if (!ModelState.IsValid)
@@ -48,19 +50,21 @@ namespace DWF.WebMVC.Controllers
         }
 
         // GET: Match Details View
-        public ActionResult MatchDetails(int matchId)
+        [ActionName("Details")]
+        public ActionResult MatchDetails(int id)
         {
             var svc = new MatchService();
-            var model = svc.GetMatchById(matchId);
+            var model = svc.GetMatchById(id);
 
             return View(model);
         }
 
          //GET: Match Edit View
-       public ActionResult MatchEdit(int matchId)
+         [ActionName("Edit")]
+       public ActionResult MatchEdit(int id)
        {
            var svc = new MatchService();
-           var detail = svc.GetMatchById(matchId);
+           var detail = svc.GetMatchById(id);
             var model =
                 new MatchEdit
                 {
@@ -79,12 +83,13 @@ namespace DWF.WebMVC.Controllers
         // POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult MatchEdit(int matchId, MatchEdit model)
+        [ActionName("Edit")]
+        public ActionResult MatchEdit(int id, MatchEdit model)
         {
             if (!ModelState.IsValid)
                 return View(model);
 
-            if(model.MatchId != matchId)
+            if(model.MatchId != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);
@@ -103,10 +108,11 @@ namespace DWF.WebMVC.Controllers
         }
 
         // GET: Match Delete View
-        public ActionResult DeleteMatch(int matchId)
+        [ActionName("Delete")]
+        public ActionResult DeleteMatch(int id)
         {
             var svc = new MatchService();
-            var model = svc.GetMatchById(matchId);
+            var model = svc.GetMatchById(id);
 
             return View(model);
         }
@@ -115,11 +121,11 @@ namespace DWF.WebMVC.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int matchId)
+        public ActionResult Delete(int id)
         {
             var svc = new MatchService();
 
-            svc.DeleteMatch(matchId);
+            svc.DeleteMatch(id);
 
             TempData["SaveResult"] = "Your match was deleted.";
 
