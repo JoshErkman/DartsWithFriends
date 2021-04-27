@@ -100,7 +100,7 @@ namespace DWF.WebMVC.Controllers
             if (svc.UpdateMatch(model))
             {
                 TempData["SaveResult"] = "Your match was updated.";
-                return RedirectToAction("Index");
+                return RedirectToAction("Edit", "Match", new {id = id });
             }
 
             ModelState.AddModelError("", "The match could not be updated.");

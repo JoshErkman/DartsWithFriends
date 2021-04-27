@@ -35,7 +35,31 @@ namespace DWF.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        
+
+        public bool CreateMatch1(int matchsetupid)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                //MatchSetup matchSetup = ctx.MatchSetups.Single(e => e.MatchSetupId == model.MatchSetupId);
+
+                var entity =
+                    new Match()
+                    {
+
+                        MatchSetupId = matchsetupid,
+                        PlayerOneNeededScore = 501,
+                        PlayerTwoNeededScore = 501,
+                        SetScore = 0,
+                        LegScore = 0,
+                        PlayerOneAvgRoundScore = 0,
+                        PlayerTwoAvgRoundScore = 0
+                    };
+
+                ctx.Matches.Add(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
         // GET (all)
         public IEnumerable<MatchListItem> GetMatches()
         {
@@ -97,7 +121,7 @@ namespace DWF.Services
                     ctx
                         .Matches
                         .Single(e => e.MatchId == model.MatchId);
-
+                
                 entity.MatchId = model.MatchId;
                 entity.PlayerOneNeededScore = model.PlayerOneNeededScore;
                 entity.PlayerTwoNeededScore = model.PlayerTwoNeededScore;

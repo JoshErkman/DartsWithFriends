@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace DWF.Data
 {
     public class Match
     {
+        //[Key] -- required migration
         public int MatchId { get; set; }
 
         [ForeignKey(nameof(MatchSetup))]

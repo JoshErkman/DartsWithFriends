@@ -24,12 +24,12 @@ namespace DWF.WebMVC.Controllers
             return View(model);
         }
 
-       // GET: MatchSetup Create view
-       [ActionName("Create")]
-       public ActionResult CreateMatchSetup()
-       {
+        // GET: MatchSetup Create view
+        [ActionName("Create")]
+        public ActionResult CreateMatchSetup()
+        {
             return View();
-       }
+        }
 
         // POST
         [HttpPost]
@@ -42,21 +42,39 @@ namespace DWF.WebMVC.Controllers
 
             var svc = CreateMatchSetupService();
 
-          if (!svc.ValidateEmail(model))
-          {
-              ModelState.AddModelError("", "This email does not exist.");
-              return View(model);
-          }
-
-            if (svc.CreateMatchSetup(model))
+            if (!svc.ValidateEmail(model))
             {
-                TempData["SaveResult"] = "Your match setup was created.";
-                return RedirectToAction("Create", "Match");
+                ModelState.AddModelError("", "This email does not exist.");
+                return View(model);
             }
 
-            ModelState.AddModelError("", "The match setup could not be created.");
+            var matchsetupid = svc.CreateMatchSetup1(model);
+            var ok = new MatchService().GetMatches();
+            foreach (var item in ok)
+            {
+                if (matchsetupid == 0)
+                {
+                    return RedirectToAction("Index", model);
+
+                }
+                else if (item.MatchSetupId == matchsetupid)
+                {
+                    return RedirectToAction("Edit", "Match", new { id = item.MatchId });
+                }
+            }
 
             return RedirectToAction("Index", model);
+
+            //if (svc.CreateMatchSetup(model))
+            //{
+            //    TempData["SaveResult"] = "Your match setup was created.";           
+            //    return RedirectToAction("Edit", "Match", new {id = 12 });
+            //}
+
+
+            //ModelState.AddModelError("", "The match setup could not be created.");
+
+            //return RedirectToAction("Index", model);
         }
 
         // GET: MatchSetup Details View

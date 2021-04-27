@@ -26,7 +26,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.PlayerOneNeededScore, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.PlayerOneNeededScore, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.PlayerOneNeededScore, new { htmlAttributes = new { @class = "form-control", @Value="501", disabled = "disabled" } })
                 @Html.ValidationMessageFor(model => model.PlayerOneNeededScore, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -34,7 +34,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.PlayerTwoNeededScore, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.PlayerTwoNeededScore, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.PlayerTwoNeededScore, new { htmlAttributes = new { @class = "form-control", @Value = "501", disabled = "disabled" } })
                 @Html.ValidationMessageFor(model => model.PlayerTwoNeededScore, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -70,7 +70,7 @@
                 @Html.ValidationMessageFor(model => model.PlayerTwoAvgRoundScore, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />

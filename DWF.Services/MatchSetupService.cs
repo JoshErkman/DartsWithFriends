@@ -21,6 +21,8 @@ namespace DWF.Services
         // POST
         public bool CreateMatchSetup(MatchSetupCreate model)
         {
+            var service = new MatchService();
+           
             using (var ctx = new ApplicationDbContext())
             {
                 try
@@ -36,15 +38,49 @@ namespace DWF.Services
                             NumberOfSets = model.NumberOfSets,
                             NumberOfLegs = model.NumberOfLegs
                         };
-
                     ctx.MatchSetups.Add(entity);
-                    return ctx.SaveChanges() == 1;
+                    ctx.SaveChanges();
+                    service.CreateMatch1(entity.MatchSetupId);
+                    
+                    return true;
                 }
 
                 catch (InvalidOperationException e)
                 {
                     return false;
                 }
+            }
+        }
+        public int CreateMatchSetup1(MatchSetupCreate model)
+        {
+            var service = new MatchService();
+
+            using (var ctx = new ApplicationDbContext())
+            {
+                try
+                {
+
+                    ApplicationUser opponent = ctx.Users.Single(e => e.UserName == model.OpponentEmail);
+
+                    var entity =
+                        new MatchSetup()
+                        {
+                            PlayerOneId = _userId.ToString(),
+                            PlayerTwoId = opponent.Id,
+                            NumberOfSets = model.NumberOfSets,
+                            NumberOfLegs = model.NumberOfLegs
+                        };
+                    ctx.MatchSetups.Add(entity);
+                    ctx.SaveChanges();
+                    service.CreateMatch1(entity.MatchSetupId);
+
+                    return entity.MatchSetupId;
+                }
+                catch(InvalidOperationException e)
+                {
+                    return 0;
+                }
+
             }
         }
 
