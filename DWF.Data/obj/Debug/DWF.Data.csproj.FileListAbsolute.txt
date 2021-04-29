@@ -16,3 +16,5 @@ C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\obj\Debug\DWF.
 C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\obj\Debug\DWF.Data.pdb
 C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\obj\Debug\DWF.Data.Migrations.initialMigration.resources
 C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\obj\Debug\DWF.Data.csproj.GenerateResource.cache
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\obj\Debug\DWF.Data.Migrations.addmigrationAddedRoundsToMatch.resources
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\obj\Debug\DWF.Data.Migrations.DeletedSetsAndLegs.resources

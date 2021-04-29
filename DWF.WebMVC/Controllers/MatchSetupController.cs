@@ -101,8 +101,6 @@ namespace DWF.WebMVC.Controllers
                     MatchSetupId = detail.MatchSetupId,
                     PlayerOneEmail = detail.PlayerOneEmail,
                     PlayerTwoEmail = detail.PlayerTwoEmail,
-                    NumberOfSets = detail.NumberOfSets,
-                    NumberOfLegs = detail.NumberOfLegs
                 };
 
             return View(model);

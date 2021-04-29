@@ -22,7 +22,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.PlayerOneNeededScore, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.PlayerOneNeededScore, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.PlayerOneNeededScore, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
                     @Html.ValidationMessageFor(model => model.PlayerOneNeededScore, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -32,22 +32,6 @@
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.PlayerTwoNeededScore, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.PlayerTwoNeededScore, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.SetScore, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.SetScore, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.SetScore, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.LegScore, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.LegScore, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.LegScore, "", new { @class = "text-danger" })
                 </div>
             </div>
 
@@ -77,16 +61,16 @@
             <div class="form-group">
                 <p class="control-label col-md-2">Player one round score</p>
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.PlayerOneAvgRoundScore, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.PlayerOneAvgRoundScore, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.PlayerOneRoundScore, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PlayerOneRoundScore, "", new { @class = "text-danger" })
                 </div>
             </div>
 
             <div class="form-group">
                 <p class="control-label col-md-2">Player Two round score</p>
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.PlayerTwoAvgRoundScore, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.PlayerTwoAvgRoundScore, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.PlayerTwoRoundScore, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PlayerTwoRoundScore, "", new { @class = "text-danger" })
                 </div>
             </div>
         </div>

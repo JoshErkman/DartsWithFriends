@@ -71,8 +71,6 @@ namespace DWF.WebMVC.Controllers
                     MatchId = detail.MatchId,
                     PlayerOneNeededScore = detail.PlayerOneNeededScore,
                     PlayerTwoNeededScore = detail.PlayerTwoNeededScore,
-                    SetScore = detail.SetScore,
-                    LegScore = detail.LegScore,
                     PlayerOneAvgRoundScore = detail.PlayerOneAvgRoundScore,
                     PlayerTwoAvgRoundScore = detail.PlayerTwoAvgRoundScore
                 };

@@ -20,7 +20,5 @@ namespace DWF.Data
         public string PlayerTwoId { get; set; }
         public virtual ApplicationUser UserTwo { get; set; }
 
-        public int NumberOfSets { get; set; }
-        public int NumberOfLegs { get; set; }
     }
 }

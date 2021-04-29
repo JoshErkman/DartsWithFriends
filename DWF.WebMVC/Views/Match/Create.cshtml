@@ -40,22 +40,6 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.SetScore, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.SetScore, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.SetScore, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.LegScore, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.LegScore, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.LegScore, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(model => model.PlayerOneAvgRoundScore, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.PlayerOneAvgRoundScore, new { htmlAttributes = new { @class = "form-control" } })

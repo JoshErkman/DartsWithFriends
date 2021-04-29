@@ -12,8 +12,6 @@ namespace DWF.Models
         public int MatchSetupId { get; set; }
         public int PlayerOneNeededScore { get; set; }
         public int PlayerTwoNeededScore { get; set; }
-        public int SetScore { get; set; }
-        public int LegScore { get; set; }
         public int PlayerOneAvgRoundScore { get; set; }
         public int PlayerTwoAvgRoundScore { get; set; }
     }

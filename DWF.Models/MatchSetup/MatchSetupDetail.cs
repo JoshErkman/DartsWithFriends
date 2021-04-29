@@ -11,7 +11,6 @@ namespace DWF.Models.MatchSetup
         public int MatchSetupId { get; set; }
         public string PlayerOneEmail { get; set; }
         public string PlayerTwoEmail { get; set; }
-        public int NumberOfSets { get; set; }
-        public int NumberOfLegs { get; set; }
+
     }
 }

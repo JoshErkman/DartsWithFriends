@@ -25,8 +25,6 @@ namespace DWF.Services
                         MatchSetupId = model.MatchSetupId,
                         PlayerOneNeededScore = model.PlayerOneNeededScore,
                         PlayerTwoNeededScore = model.PlayerTwoNeededScore,
-                        SetScore = model.SetScore,
-                        LegScore = model.LegScore,
                         PlayerOneAvgRoundScore = model.PlayerOneAvgRoundScore,
                         PlayerTwoAvgRoundScore = model.PlayerTwoAvgRoundScore
                     };
@@ -49,8 +47,6 @@ namespace DWF.Services
                         MatchSetupId = matchsetupid,
                         PlayerOneNeededScore = 501,
                         PlayerTwoNeededScore = 501,
-                        SetScore = 0,
-                        LegScore = 0,
                         PlayerOneAvgRoundScore = 0,
                         PlayerTwoAvgRoundScore = 0
                     };
@@ -76,8 +72,6 @@ namespace DWF.Services
                                     MatchSetupId = e.MatchSetupId,
                                     PlayerOneNeededScore = e.PlayerOneNeededScore,
                                     PlayerTwoNeededScore = e.PlayerTwoNeededScore,
-                                    SetScore = e.SetScore,
-                                    LegScore = e.LegScore,
                                     PlayerOneAvgRoundScore = e.PlayerOneAvgRoundScore,
                                     PlayerTwoAvgRoundScore = e.PlayerTwoAvgRoundScore
                                 }
@@ -104,8 +98,6 @@ namespace DWF.Services
                         MatchSetupId = entity.MatchSetupId,
                         PlayerOneNeededScore = entity.PlayerOneNeededScore,
                         PlayerTwoNeededScore = entity.PlayerTwoNeededScore,
-                        SetScore = entity.SetScore,
-                        LegScore = entity.LegScore,
                         PlayerOneAvgRoundScore = entity.PlayerOneAvgRoundScore,
                         PlayerTwoAvgRoundScore = entity.PlayerTwoAvgRoundScore
                     };
@@ -121,15 +113,12 @@ namespace DWF.Services
                     ctx
                         .Matches
                         .Single(e => e.MatchId == model.MatchId);
-                
-                entity.MatchId = model.MatchId;
-                entity.PlayerOneNeededScore = model.PlayerOneNeededScore;
-                entity.PlayerTwoNeededScore = model.PlayerTwoNeededScore;
-                entity.SetScore = model.SetScore;
-                entity.LegScore = model.LegScore;
-                entity.PlayerOneAvgRoundScore = model.PlayerOneAvgRoundScore;
-                entity.PlayerTwoAvgRoundScore = model.PlayerTwoAvgRoundScore;
 
+                entity.Rounds++;
+                entity.PlayerOneNeededScore = entity.PlayerOneNeededScore - model.PlayerOneRoundScore;
+                entity.PlayerTwoNeededScore = entity.PlayerTwoNeededScore - model.PlayerTwoRoundScore;
+                entity.PlayerOneAvgRoundScore = (entity.PlayerOneAvgRoundScore + model.PlayerOneRoundScore) / entity.Rounds;//change this
+                entity.PlayerTwoAvgRoundScore = model.PlayerTwoAvgRoundScore;
                 return ctx.SaveChanges() == 1;
             }
         }

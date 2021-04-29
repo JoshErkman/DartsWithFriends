@@ -35,8 +35,6 @@ namespace DWF.Services
                         {
                             PlayerOneId = _userId.ToString(),
                             PlayerTwoId = opponent.Id,
-                            NumberOfSets = model.NumberOfSets,
-                            NumberOfLegs = model.NumberOfLegs
                         };
                     ctx.MatchSetups.Add(entity);
                     ctx.SaveChanges();
@@ -67,8 +65,6 @@ namespace DWF.Services
                         {
                             PlayerOneId = _userId.ToString(),
                             PlayerTwoId = opponent.Id,
-                            NumberOfSets = model.NumberOfSets,
-                            NumberOfLegs = model.NumberOfLegs
                         };
                     ctx.MatchSetups.Add(entity);
                     ctx.SaveChanges();
@@ -138,8 +134,6 @@ namespace DWF.Services
                                     MatchSetupId = e.MatchSetupId,
                                     PlayerOneEmail = e.UserOne.UserName,
                                     PlayerTwoEmail = e.UserTwo.UserName,
-                                    NumberOfSets = e.NumberOfSets,
-                                    NumberOfLegs = e.NumberOfLegs
                                 }
                             );
 
@@ -166,8 +160,6 @@ namespace DWF.Services
                         MatchSetupId = entity.MatchSetupId,
                         PlayerOneEmail = playerOne.UserName,
                         PlayerTwoEmail = playerTwo.UserName,
-                        NumberOfSets = entity.NumberOfSets,
-                        NumberOfLegs = entity.NumberOfLegs
                     };
             }
         }
@@ -188,8 +180,6 @@ namespace DWF.Services
 
                 entity.PlayerOneId = playerOne.Id;
                 entity.PlayerTwoId = playerTwo.Id;
-                entity.NumberOfSets = model.NumberOfSets;
-                entity.NumberOfLegs = model.NumberOfLegs;
 
                 return ctx.SaveChanges() == 1;
             }

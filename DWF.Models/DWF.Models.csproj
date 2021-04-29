@@ -54,8 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MatchRound\MatchRoundCreate.cs" />
-    <Compile Include="MatchRound\MatchRoundEdit.cs" />
+    <Compile Include="MatchRound\MatchRoundCreateEdit.cs" />
     <Compile Include="Match\MatchCreate.cs" />
     <Compile Include="MatchSetup\MatchSetupCreate.cs" />
     <Compile Include="MatchSetup\MatchSetupDetail.cs" />

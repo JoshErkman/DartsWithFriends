@@ -16,7 +16,8 @@ namespace DWF.Models
         public int SetScore { get; set; }
         public int LegScore { get; set; }
         public int PlayerOneAvgRoundScore { get; set; }
-        public int PlayerTwoAvgRoundScore { get; set; }
+        public int PlayerTwoAvgRoundScore { get; set; } 
+
         [Required]
         [Range(0, 180, ErrorMessage = "Total points must be between 0 and 180.")]
         public int TotalPoints { get; set; }

@@ -61,6 +61,14 @@
     <Compile Include="Migrations\202104192244581_initialMigration.Designer.cs">
       <DependentUpon>202104192244581_initialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104282350101_add-migration AddedRoundsToMatch.cs" />
+    <Compile Include="Migrations\202104282350101_add-migration AddedRoundsToMatch.Designer.cs">
+      <DependentUpon>202104282350101_add-migration AddedRoundsToMatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104290028177_DeletedSetsAndLegs.cs" />
+    <Compile Include="Migrations\202104290028177_DeletedSetsAndLegs.Designer.cs">
+      <DependentUpon>202104290028177_DeletedSetsAndLegs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Round.cs" />
@@ -72,6 +80,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202104192244581_initialMigration.resx">
       <DependentUpon>202104192244581_initialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104282350101_add-migration AddedRoundsToMatch.resx">
+      <DependentUpon>202104282350101_add-migration AddedRoundsToMatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104290028177_DeletedSetsAndLegs.resx">
+      <DependentUpon>202104290028177_DeletedSetsAndLegs.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

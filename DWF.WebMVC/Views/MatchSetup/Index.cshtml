@@ -32,12 +32,6 @@
         <th>
             @Html.DisplayNameFor(model => model.PlayerTwoEmail)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NumberOfSets)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NumberOfLegs)
-        </th>
         <th></th>
     </tr>
 
@@ -51,12 +45,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.PlayerTwoEmail)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NumberOfSets)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NumberOfLegs)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new {  id=item.MatchSetupId  }) |
