@@ -1,4 +1,5 @@
 ﻿using DWF.Models;
+using DWF.Models.Match;
 using DWF.Services;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace DWF.WebMVC.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ActionName("Create")]
-        public ActionResult CreateRound(RoundCreate model)
+        public ActionResult CreateRound(RoundCreateMatchEdit model)
         {
             if (!ModelState.IsValid)
                 return View(model);

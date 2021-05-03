@@ -1,5 +1,6 @@
 ﻿using DWF.Data;
 using DWF.Models;
+using DWF.Models.Match;
 using DWF.Models.Round;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace DWF.Services
     public class RoundService
     {
         // POST
-        public bool CreateRound(RoundCreate model)
+        public bool CreateRound(RoundCreateMatchEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -20,7 +21,8 @@ namespace DWF.Services
                 var entity =
                     new Round()
                     {
-                        TotalPoints = model.TotalPoints,
+                        RoundId = model.RoundId, 
+                        TotalRoundPoints = model.TotoalRoundPoints,
                         MatchId = model.MatchId
                     };
 
@@ -43,7 +45,7 @@ namespace DWF.Services
                                 {
                                     RoundId = e.RoundId,
                                     MatchId = e.MatchId,
-                                    TotalPoints = e.TotalPoints
+                                    TotalPoints = e.TotalRoundPoints
                                 }
                         );
 
@@ -65,7 +67,7 @@ namespace DWF.Services
                     new RoundDetail
                     {
                         RoundId = entity.RoundId,
-                        TotalPoints = entity.TotalPoints,
+                        TotalPoints = entity.TotalRoundPoints,
                         MatchId = entity.MatchId
                     };
             }
@@ -81,7 +83,7 @@ namespace DWF.Services
                         .Rounds
                         .Single(e => e.RoundId == model.RoundId);
 
-                entity.TotalPoints = model.TotalPoints;
+                entity.TotalRoundPoints = model.TotalPoints;
                 entity.MatchId = model.MatchId;
 
                 return ctx.SaveChanges() == 1;

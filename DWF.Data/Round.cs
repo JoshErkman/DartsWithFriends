@@ -11,7 +11,7 @@ namespace DWF.Data
     {
         public int RoundId { get; set; }
 
-        public int TotalPoints { get; set; }
+        public int TotalRoundPoints { get; set; }
 
         [ForeignKey (nameof(Match))]
         public int MatchId { get; set; }

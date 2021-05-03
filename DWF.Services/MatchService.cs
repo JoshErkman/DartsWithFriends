@@ -26,7 +26,9 @@ namespace DWF.Services
                         PlayerOneNeededScore = model.PlayerOneNeededScore,
                         PlayerTwoNeededScore = model.PlayerTwoNeededScore,
                         PlayerOneAvgRoundScore = model.PlayerOneAvgRoundScore,
-                        PlayerTwoAvgRoundScore = model.PlayerTwoAvgRoundScore
+                        PlayerTwoAvgRoundScore = model.PlayerTwoAvgRoundScore,
+                        PlayerOneTotalMatchPoints = model.PlayerOneTotalMatchPoints,
+                        PlayerTwoTotalMatchPoints = model.PlayerTwoTotalMatchPoints
                     };
 
                 ctx.Matches.Add(entity);
@@ -99,14 +101,16 @@ namespace DWF.Services
                         PlayerOneNeededScore = entity.PlayerOneNeededScore,
                         PlayerTwoNeededScore = entity.PlayerTwoNeededScore,
                         PlayerOneAvgRoundScore = entity.PlayerOneAvgRoundScore,
-                        PlayerTwoAvgRoundScore = entity.PlayerTwoAvgRoundScore
+                        PlayerTwoAvgRoundScore = entity.PlayerTwoAvgRoundScore,
+                        IsTurn = entity.IsTurn
                     };
             }
         }
 
         // PUT
-        public bool UpdateMatch(MatchEdit model)
+        public bool UpdateMatch(RoundCreateMatchEdit model)
         {
+
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
@@ -114,11 +118,58 @@ namespace DWF.Services
                         .Matches
                         .Single(e => e.MatchId == model.MatchId);
 
-                entity.Rounds++;
-                entity.PlayerOneNeededScore = entity.PlayerOneNeededScore - model.PlayerOneRoundScore;
-                entity.PlayerTwoNeededScore = entity.PlayerTwoNeededScore - model.PlayerTwoRoundScore;
-                entity.PlayerOneAvgRoundScore = (entity.PlayerOneAvgRoundScore + model.PlayerOneRoundScore) / entity.Rounds;//change this
-                entity.PlayerTwoAvgRoundScore = model.PlayerTwoAvgRoundScore;
+                RoundService svc = new RoundService();
+
+                if (entity.IsTurn == false)
+                {
+                    entity.PlayerOneRound++;
+                    if (model.PlayerOneRoundScore > entity.PlayerOneNeededScore)// BUST
+                    {
+                        entity.IsTurn = true;
+                        entity.PlayerOneTotalMatchPoints = entity.PlayerOneTotalMatchPoints + 0;
+                        entity.PlayerOneAvgRoundScore = (entity.PlayerOneTotalMatchPoints) / entity.PlayerOneRound;
+                    }
+                    else// NO BUST
+                    {
+                        if (entity.PlayerOneNeededScore == model.PlayerOneRoundScore)
+                        {
+                            var matchSetup = ctx.MatchSetups.Find(entity.MatchSetupId);
+                            matchSetup.PlayerOneIsStarred = true;
+                        }
+                        entity.PlayerOneNeededScore -= model.PlayerOneRoundScore;
+                        entity.PlayerOneTotalMatchPoints = entity.PlayerOneTotalMatchPoints + model.PlayerOneRoundScore;
+                        entity.PlayerOneAvgRoundScore = (entity.PlayerOneTotalMatchPoints) / entity.PlayerOneRound;
+                        model.TotoalRoundPoints = model.PlayerOneRoundScore;
+                        entity.IsTurn = true;
+
+                    }
+                }
+                else
+                {
+                    entity.PlayerTwoRound++;
+                    if (model.PlayerTwoRoundScore > entity.PlayerTwoNeededScore)// BUST
+                    {
+                        entity.IsTurn = false;
+                        entity.PlayerTwoTotalMatchPoints = entity.PlayerTwoTotalMatchPoints + 0;
+                        entity.PlayerTwoAvgRoundScore = (entity.PlayerTwoTotalMatchPoints) / entity.PlayerTwoRound;
+                    }
+                    else// NO BUST
+                    {
+                        if (entity.PlayerTwoNeededScore == model.PlayerTwoRoundScore)
+                        {
+                            var matchSetup = ctx.MatchSetups.Find(entity.MatchSetupId);
+                            matchSetup.PlayerTwoIsStarred = true;
+                        }
+                        entity.PlayerTwoNeededScore = entity.PlayerTwoNeededScore - model.PlayerTwoRoundScore;
+                        entity.PlayerTwoTotalMatchPoints = entity.PlayerTwoTotalMatchPoints + model.PlayerTwoRoundScore;
+                        entity.PlayerTwoAvgRoundScore = (entity.PlayerTwoTotalMatchPoints) / entity.PlayerTwoRound;
+                        model.TotoalRoundPoints = model.PlayerTwoRoundScore;
+                        entity.IsTurn = false;
+
+                    }
+                }
+
+                svc.CreateRound(model);
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -140,3 +191,4 @@ namespace DWF.Services
         }
     }
 }
+

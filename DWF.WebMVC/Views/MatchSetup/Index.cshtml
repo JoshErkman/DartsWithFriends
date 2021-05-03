@@ -27,7 +27,13 @@
             @Html.DisplayNameFor(model => model.MatchSetupId)
         </th>
         <th>
+            IsWinner
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.PlayerOneEmail)
+        </th>
+        <th>
+            IsWinner
         </th>
         <th>
             @Html.DisplayNameFor(model => model.PlayerTwoEmail)
@@ -41,7 +47,13 @@
             @Html.DisplayFor(modelItem => item.MatchSetupId)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.PlayerOneIsStarred)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.PlayerOneEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlayerTwoIsStarred)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.PlayerTwoEmail)
@@ -55,3 +67,5 @@
 }
 
 </table>
+
+

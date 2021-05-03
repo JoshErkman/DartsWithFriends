@@ -18,3 +18,9 @@ C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\obj\Debug\DWF.
 C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\obj\Debug\DWF.Data.csproj.GenerateResource.cache
 C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\obj\Debug\DWF.Data.Migrations.addmigrationAddedRoundsToMatch.resources
 C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\obj\Debug\DWF.Data.Migrations.DeletedSetsAndLegs.resources
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\obj\Debug\DWF.Data.Migrations.PlayerOneRoundPlayerTwoRoundAdded.resources
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\obj\Debug\DWF.Data.Migrations.AddedIsTurn.resources
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\obj\Debug\DWF.Data.Migrations.totalRoundPoints.resources
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\obj\Debug\DWF.Data.Migrations.AddedTotalMatchPoints.resources
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\obj\Debug\DWF.Data.Migrations.AddedIsStarred.resources
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\obj\Debug\DWF.Data.Migrations.IsStarredToPlayers.resources

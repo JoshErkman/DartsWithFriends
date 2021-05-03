@@ -22,7 +22,15 @@ namespace DWF.Data
         public int PlayerOneAvgRoundScore { get; set; } = 0;
         public int PlayerTwoAvgRoundScore { get; set; } = 0;
 
-        public int Rounds { get; set; }
-        // public int Stats { get; set; }
+        public int PlayerOneRound { get; set; }
+
+        public int PlayerTwoRound { get; set; }
+
+        public bool IsTurn { get; set; }
+
+        public int PlayerOneTotalMatchPoints { get; set; }
+
+        public int PlayerTwoTotalMatchPoints { get; set; }
+
     }
 }

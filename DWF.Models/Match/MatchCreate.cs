@@ -14,5 +14,7 @@ namespace DWF.Models
         public int PlayerTwoNeededScore { get; set; }
         public int PlayerOneAvgRoundScore { get; set; }
         public int PlayerTwoAvgRoundScore { get; set; }
+        public int PlayerOneTotalMatchPoints { get; set; }
+        public int PlayerTwoTotalMatchPoints { get; set; }
     }
 }

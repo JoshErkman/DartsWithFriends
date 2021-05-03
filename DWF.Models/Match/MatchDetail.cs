@@ -14,5 +14,6 @@ namespace DWF.Models.Match
         public int PlayerTwoNeededScore { get; set; }
         public int PlayerOneAvgRoundScore { get; set; }
         public int PlayerTwoAvgRoundScore { get; set; }
+        public bool IsTurn { get; set; }
     }
 }

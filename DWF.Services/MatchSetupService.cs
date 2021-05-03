@@ -134,6 +134,8 @@ namespace DWF.Services
                                     MatchSetupId = e.MatchSetupId,
                                     PlayerOneEmail = e.UserOne.UserName,
                                     PlayerTwoEmail = e.UserTwo.UserName,
+                                    PlayerOneIsStarred = e.PlayerOneIsStarred,
+                                    PlayerTwoIsStarred = e.PlayerTwoIsStarred
                                 }
                             );
 

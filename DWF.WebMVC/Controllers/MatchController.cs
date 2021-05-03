@@ -59,35 +59,36 @@ namespace DWF.WebMVC.Controllers
             return View(model);
         }
 
-         //GET: Match Edit View
-         [ActionName("Edit")]
-       public ActionResult MatchEdit(int id)
-       {
-           var svc = new MatchService();
-           var detail = svc.GetMatchById(id);
+        //GET: Match Edit View
+        [ActionName("Edit")]
+        public ActionResult MatchEdit(int id)
+        {
+            var svc = new MatchService();
+            var detail = svc.GetMatchById(id);
             var model =
-                new MatchEdit
+                new RoundCreateMatchEdit
                 {
                     MatchId = detail.MatchId,
                     PlayerOneNeededScore = detail.PlayerOneNeededScore,
                     PlayerTwoNeededScore = detail.PlayerTwoNeededScore,
                     PlayerOneAvgRoundScore = detail.PlayerOneAvgRoundScore,
-                    PlayerTwoAvgRoundScore = detail.PlayerTwoAvgRoundScore
+                    PlayerTwoAvgRoundScore = detail.PlayerTwoAvgRoundScore,
+                    IsTurn = detail.IsTurn
                 };
 
             return View(model);
-       }
+        }
 
         // POST
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ActionName("Edit")]
-        public ActionResult MatchEdit(int id, MatchEdit model)
+        public ActionResult MatchEdit(int id, RoundCreateMatchEdit model)
         {
             if (!ModelState.IsValid)
                 return View(model);
 
-            if(model.MatchId != id)
+            if (model.MatchId != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);
@@ -95,15 +96,35 @@ namespace DWF.WebMVC.Controllers
 
             var svc = new MatchService();
 
-            if (svc.UpdateMatch(model))
+           
+            if (model.PlayerOneRoundScore > model.PlayerOneNeededScore)
             {
-                TempData["SaveResult"] = "Your match was updated.";
-                return RedirectToAction("Edit", "Match", new {id = id });
+                TempData["P1Bust"] = "Player 1 BUSTED!";
+            }
+            else if (model.PlayerTwoRoundScore > model.PlayerTwoNeededScore)
+            {
+                TempData["P2Bust"] = "Player 2 BUSTED!";
             }
 
-            ModelState.AddModelError("", "The match could not be updated.");
-            return View(model);
+
+            if (model.PlayerOneNeededScore == model.PlayerOneRoundScore)
+            {
+                TempData["SaveResult"] = "Congratulations Player 1! You have won the match!";
+                svc.UpdateMatch(model);
+                return RedirectToAction("Index", "Home", new { id = id });
+            }
+
+            if (model.PlayerTwoNeededScore == model.PlayerOneRoundScore)
+            {
+                TempData["SaveResult"] = "Congratulations Player 2! You have won the match!";
+                svc.UpdateMatch(model);
+                return RedirectToAction("Index", "Home", new { id = id });
+            }
+
+            svc.UpdateMatch(model);
+            return RedirectToAction("Edit", "Match", new { id = id });
         }
+
 
         // GET: Match Delete View
         [ActionName("Delete")]

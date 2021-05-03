@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,12 @@ namespace DWF.Data
         [ForeignKey(nameof(UserTwo))]
         public string PlayerTwoId { get; set; }
         public virtual ApplicationUser UserTwo { get; set; }
+
+        [DefaultValue(false)]
+        public bool PlayerOneIsStarred { get; set; }
+
+        [DefaultValue(false)]
+        public bool PlayerTwoIsStarred { get; set; }
 
     }
 }
