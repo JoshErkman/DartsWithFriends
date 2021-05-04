@@ -13,30 +13,61 @@
     </div>
 }
 
-<div class="jumbotron">
-    <h1>Welcome to Darts With Friends! </h1>
-    <p class="lead">Click the button below to create a match.</p>
-    <p><a href="https://localhost:44364/MatchSetup/Create" class="btn btn-danger btn-lg">Create Match &raquo;</a></p>
+@*Possible logo 1*@
+@*<div class="logo" style="width:400px">
+        <p class="plogo1">DARTS</p>
+        <p class="plogo2">WITH FRIENDS</p>
+    </div>*@
+
+@*Possible logo 2*@
+@*<div class="container">
+        <div class="row">
+            <div class="neons col-12">
+                <h1><em>-Dartin'-</em></h1>
+                <h2><em>With Friends</em></h2>
+            </div>
+        </div>
+    </div>*@
+
+@*<a href="https://localhost:44364/MatchSetup/Create" class="btn btn-danger btn-lg buttoncenter">Create Match &raquo;</a>*@
+
+<div class="flier">
+    <img src="~/Content/Assets/silver_thunder (1).png" style="width:400px;" />
 </div>
 
-@*<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+<div class="div-neon" style="width: 500px; height: 200px;">
+    <p class="p-neon">
+        <span class="span-neon">D</span>
+        <span class="span-neon">A</span>
+        <span class="span-neon">R</span>
+        <span class="span-neon">T</span>
+        <span class="span-neon">I</span>
+        <span class="span-neon">N</span>
+        <span class="span-neon">'</span>
+        <span class="with-friends">with friends</span>
+    </p>
+</div>
+
+@*<div class="neons">
+    <h1 class="neons">With Friends</h1>
 </div>*@
+
+
+@*<script src="./script.js"></script>
+
+    <script type="text/javascript">
+        const setProperty = (duration) => {
+            document.documentElement.style.setProperty(
+                "--animation-time",
+                duration + "s"
+            );
+        };
+
+        const changeAnimationTime = () => {
+            const animationDuration = Math.random();
+            setProperty(animationDuration);
+        };
+
+        setInterval(changeAnimationTime, 1000);
+    </script>*@
+
