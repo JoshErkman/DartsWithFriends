@@ -4,25 +4,19 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>MatchEdit</h2>
-
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
 
-
-        <h4>MatchEdit</h4>
-        <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.MatchId)
 
         <div class="rightSide col-lg-5">
 
             <div class="form-group">
-                @Html.LabelFor(model => model.PlayerOneNeededScore, htmlAttributes: new { @class = "control-label col-md-3" })
+                @Html.LabelFor(model => model.PlayerOneNeededScore, htmlAttributes: new { @class = "control-label col-md-3 match-label" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.PlayerOneNeededScore, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                     @Html.ValidationMessageFor(model => model.PlayerOneNeededScore, "", new { @class = "text-danger" })
@@ -30,7 +24,7 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.PlayerTwoNeededScore, htmlAttributes: new { @class = "control-label col-md-3" })
+                @Html.LabelFor(model => model.PlayerTwoNeededScore, htmlAttributes: new { @class = "control-label col-md-3 match-label" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.PlayerTwoNeededScore, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                     @Html.ValidationMessageFor(model => model.PlayerTwoNeededScore, "", new { @class = "text-danger" })
@@ -38,7 +32,7 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.PlayerOneAvgRoundScore, htmlAttributes: new { @class = "control-label col-md-3" })
+                @Html.LabelFor(model => model.PlayerOneAvgRoundScore, htmlAttributes: new { @class = "control-label col-md-3 match-label" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.PlayerOneAvgRoundScore, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                     @Html.ValidationMessageFor(model => model.PlayerOneAvgRoundScore, "", new { @class = "text-danger" })
@@ -46,7 +40,7 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.PlayerTwoAvgRoundScore, htmlAttributes: new { @class = "control-label col-md-3" })
+                @Html.LabelFor(model => model.PlayerTwoAvgRoundScore, htmlAttributes: new { @class = "control-label col-md-3 match-label" })
                 <div class="col-md-10" focus>
                     @Html.EditorFor(model => model.PlayerTwoAvgRoundScore, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                     @Html.ValidationMessageFor(model => model.PlayerTwoAvgRoundScore, "", new { @class = "text-danger" })
@@ -60,8 +54,8 @@
             @if (Model.IsTurn == false)
             {
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.PlayerOneRoundScore, htmlAttributes: new { @class = "control-label col-md-3"})
+                <div class="form-group div-match">
+                    @Html.LabelFor(model => model.PlayerOneRoundScore, htmlAttributes: new { @class = "control-label col-md-3 match-label"})
                     <div class="col-md-10" id="focusme">
                         @Html.EditorFor(model => model.PlayerOneRoundScore, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.PlayerOneRoundScore, "", new { @class = "text-danger" })
@@ -82,8 +76,8 @@
             }
             else
             {
-                <div class="form-group">
-                    @Html.LabelFor(model => model.PlayerTwoRoundScore, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="form-group div-match">
+                    @Html.LabelFor(model => model.PlayerTwoRoundScore, htmlAttributes: new { @class = "control-label col-md-3 match-label" })
                     <div class="col-md-10">
                         @Html.EditorFor(model => model.PlayerTwoRoundScore, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.PlayerTwoRoundScore, "", new { @class = "text-danger" })

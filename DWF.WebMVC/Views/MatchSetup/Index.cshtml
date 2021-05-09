@@ -4,16 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-
 @if (TempData.ContainsKey("SaveResult"))
 {
     <div class="alert alert-success fade in" role="alert">
-        
+
         <button type="button" class="close" data-dismiss="alert">
             <span>&times;</span>
         </button>
@@ -21,51 +15,70 @@
     </div>
 }
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.MatchSetupId)
-        </th>
-        <th>
-            IsWinner
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PlayerOneEmail)
-        </th>
-        <th>
-            IsWinner
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PlayerTwoEmail)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MatchSetupId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PlayerOneIsStarred)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PlayerOneEmail)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PlayerTwoIsStarred)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PlayerTwoEmail)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new {  id=item.MatchSetupId  }) |
-            @Html.ActionLink("Details", "Details", new {  id=item.MatchSetupId  }) |
-            @Html.ActionLink("Delete", "Delete", new {  id=item.MatchSetupId  })
-        </td>
-    </tr>
-}
+<div class="div-neon" style="width: 550px; height: 200px; z-index: 1; position: absolute;">
+    <p class="p-neon">
+        <span class="span-neon">-</span>
+        <span class="span-neon">D</span>
+        <span class="span-neon">A</span>
+        <span class="span-neon">R</span>
+        <span class="span-neon">T</span>
+        <span class="span-neon">I</span>
+        <span class="span-neon">N</span>
+        <span class="span-neon">'</span>
+        <span class="span-neon">-</span>
+        <span class="with-friends">WITH FRIENDS</span>
+    </p>
+</div>
 
-</table>
+<div class="table-background" style="position: relative;">
+    <table class="table match-label">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MatchSetupId)
+            </th>
+            <th>
+                IsWinner
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlayerOneEmail)
+            </th>
+            <th>
+                IsWinner
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlayerTwoEmail)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MatchSetupId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlayerOneIsStarred)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlayerOneEmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlayerTwoIsStarred)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlayerTwoEmail)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.MatchSetupId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.MatchSetupId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.MatchSetupId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
 
 

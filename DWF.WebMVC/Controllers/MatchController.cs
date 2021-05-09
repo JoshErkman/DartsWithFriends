@@ -114,7 +114,8 @@ namespace DWF.WebMVC.Controllers
                 return RedirectToAction("Index", "Home", new { id = id });
             }
 
-            if (model.PlayerTwoNeededScore == model.PlayerOneRoundScore)
+            // Not Working
+            if (model.PlayerTwoNeededScore == model.PlayerTwoRoundScore)
             {
                 TempData["SaveResult"] = "Congratulations Player 2! You have won the match!";
                 svc.UpdateMatch(model);

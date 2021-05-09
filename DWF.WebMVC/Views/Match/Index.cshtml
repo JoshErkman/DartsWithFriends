@@ -4,12 +4,6 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-
 @if (TempData.ContainsKey("SaveResult"))
 {
     <div class="alert alert-success fade in" role="alert">
@@ -21,56 +15,73 @@
     </div>
 }
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.MatchId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MatchSetupId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PlayerOneNeededScore)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PlayerTwoNeededScore)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PlayerOneAvgRoundScore)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PlayerTwoAvgRoundScore)
-        </th>
-        <th></th>
-    </tr>
+<div class="div-neon" style="width: 550px; height: 200px; z-index: 1; position: absolute;">
+    <p class="p-neon">
+        <span class="span-neon">-</span>
+        <span class="span-neon">D</span>
+        <span class="span-neon">A</span>
+        <span class="span-neon">R</span>
+        <span class="span-neon">T</span>
+        <span class="span-neon">I</span>
+        <span class="span-neon">N</span>
+        <span class="span-neon">'</span>
+        <span class="span-neon">-</span>
+        <span class="with-friends">WITH FRIENDS</span>
+    </p>
+</div>
 
-    @foreach (var item in Model)
-    {
+<div class="table-background" style="position: relative;">
+    <table class="table match-label">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.MatchId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MatchSetupId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlayerOneNeededScore)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlayerTwoNeededScore)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlayerOneAvgRoundScore)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlayerTwoAvgRoundScore)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.MatchId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.MatchId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.MatchId })
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.MatchId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MatchSetupId)
+            </th>
+            <th>
+                P1 Left To Score
+            </th>
+            <th>
+                P2 Left To Score
+            </th>
+            <th>
+                P1 Average Score
+            </th>
+            <th>
+                P2 Average Score
+            </th>
+            <th></th>
         </tr>
-    }
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MatchId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MatchSetupId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlayerOneNeededScore)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlayerTwoNeededScore)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlayerOneAvgRoundScore)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlayerTwoAvgRoundScore)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.MatchId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.MatchId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.MatchId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

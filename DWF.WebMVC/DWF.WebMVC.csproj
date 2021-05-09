@@ -182,13 +182,19 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Assets\besttable.jpg" />
     <Content Include="Content\Assets\bluedartboard.jfif" />
     <Content Include="Content\Assets\dartboardjpg.jpg" />
     <Content Include="Content\Assets\DARts With Frien.mp4" />
     <Content Include="Content\Assets\Darts.png" />
+    <Content Include="Content\Assets\overflow2.jpg" />
+    <Content Include="Content\Assets\pubtable.png" />
     <Content Include="Content\Assets\silver_dart.jpg" />
     <Content Include="Content\Assets\silver_thunder %281%29.png" />
     <Content Include="Content\Assets\single_dart.png" />
+    <Content Include="Content\Assets\thetable.jpg" />
+    <Content Include="Content\Assets\topofpub3.png" />
+    <Content Include="Content\Assets\topofpub4.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />

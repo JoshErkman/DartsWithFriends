@@ -13,30 +13,13 @@
     </div>
 }
 
-@*Possible logo 1*@
-@*<div class="logo" style="width:400px">
-        <p class="plogo1">DARTS</p>
-        <p class="plogo2">WITH FRIENDS</p>
-    </div>*@
-
-@*Possible logo 2*@
-@*<div class="container">
-        <div class="row">
-            <div class="neons col-12">
-                <h1><em>-Dartin'-</em></h1>
-                <h2><em>With Friends</em></h2>
-            </div>
-        </div>
-    </div>*@
-
-@*<a href="https://localhost:44364/MatchSetup/Create" class="btn btn-danger btn-lg buttoncenter">Create Match &raquo;</a>*@
-
 <div class="flier">
     <img src="~/Content/Assets/silver_thunder (1).png" style="width:400px;" />
 </div>
 
-<div class="div-neon" style="width: 500px; height: 200px;">
+<div class="div-neon" style="width: 550px; height: 200px;">
     <p class="p-neon">
+        <span class="span-neon">-</span>
         <span class="span-neon">D</span>
         <span class="span-neon">A</span>
         <span class="span-neon">R</span>
@@ -44,30 +27,25 @@
         <span class="span-neon">I</span>
         <span class="span-neon">N</span>
         <span class="span-neon">'</span>
-        <span class="with-friends">with friends</span>
+        <span class="span-neon">-</span>
+        <span class="with-friends">WITH FRIENDS</span>
     </p>
 </div>
 
-@*<div class="neons">
-    <h1 class="neons">With Friends</h1>
-</div>*@
+@if (!Context.User.Identity.IsAuthenticated)
+{
+    <div class="register-indicator">
+        <span class="span-reg">&#8593;</span>
+        <p class="p-reg">Register to get started!</p>
+    </div>
+}
+
+@if (Context.User.Identity.IsAuthenticated)
+{
+    <a class=" button btn-one btn create-matchsetup" href="https://localhost:44364/MatchSetup/Create" style="color: white;">Create Match &raquo;</a>
+}
 
 
-@*<script src="./script.js"></script>
 
-    <script type="text/javascript">
-        const setProperty = (duration) => {
-            document.documentElement.style.setProperty(
-                "--animation-time",
-                duration + "s"
-            );
-        };
 
-        const changeAnimationTime = () => {
-            const animationDuration = Math.random();
-            setProperty(animationDuration);
-        };
-
-        setInterval(changeAnimationTime, 1000);
-    </script>*@
 
