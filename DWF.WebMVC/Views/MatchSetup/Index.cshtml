@@ -32,22 +32,23 @@
 </div>
 
 <div class="table-background" style="position: relative;">
+    <h2 style="color: white; text-align: center;">Previous Matches</h2>
     <table class="table match-label">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.MatchSetupId)
+                Match Setup Id
             </th>
             <th>
-                IsWinner
+                Is Winner
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PlayerOneEmail)
+                Player 1 Email
             </th>
             <th>
-                IsWinner
+                Is Winner
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PlayerTwoEmail)
+                Player 2 Email
             </th>
             <th></th>
         </tr>
@@ -71,9 +72,9 @@
                     @Html.DisplayFor(modelItem => item.PlayerTwoEmail)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.MatchSetupId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.MatchSetupId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.MatchSetupId })
+                    @Html.ActionLink("Edit", "Edit", new { id = item.MatchSetupId }, new { @style = "border: 1px solid white; color: white; border-radius: 5px; padding: 3px; text-decoration: none" }) |
+                    @Html.ActionLink("Details", "Details", "Match", new { id = item.MatchSetupId }, new { @style = "border: 1px solid white; color: white; border-radius: 5px; padding: 3px; text-decoration: none" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.MatchSetupId }, new { @style = "border: 1px solid white; color: white; border-radius: 5px; padding: 3px; text-decoration: none" })
                 </td>
             </tr>
         }

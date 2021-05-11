@@ -42,7 +42,8 @@
 
 @if (Context.User.Identity.IsAuthenticated)
 {
-    <a class=" button btn-one btn create-matchsetup" href="https://localhost:44364/MatchSetup/Create" style="color: white;">Create Match &raquo;</a>
+    @*<a class=" button btn-one btn create-matchsetup" href="https://localhost:44364/MatchSetup/Create" style="color: white;">Create Match &raquo;</a>*@
+    @Html.ActionLink("Create Match", "Create", "MatchSetup", new { area = "" }, new { @style = "color: white;", @class= "button btn-one btn create-matchsetup" })
 }
 
 

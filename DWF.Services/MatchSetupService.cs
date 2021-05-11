@@ -43,7 +43,7 @@ namespace DWF.Services
                     return true;
                 }
 
-                catch (InvalidOperationException e)
+                catch (InvalidOperationException)
                 {
                     return false;
                 }
@@ -72,7 +72,7 @@ namespace DWF.Services
 
                     return entity.MatchSetupId;
                 }
-                catch(InvalidOperationException e)
+                catch(InvalidOperationException)
                 {
                     return 0;
                 }

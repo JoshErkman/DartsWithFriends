@@ -4,63 +4,80 @@
     ViewBag.Title = "Details";
 }
 
-<h2>MatchDetails</h2>
-
-<div>
-    <h4>MatchDetail</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.MatchId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MatchId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MatchSetupId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MatchSetupId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PlayerOneNeededScore)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PlayerOneNeededScore)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PlayerTwoNeededScore)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PlayerTwoNeededScore)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PlayerOneAvgRoundScore)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PlayerOneAvgRoundScore)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PlayerTwoAvgRoundScore)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PlayerTwoAvgRoundScore)
-        </dd>
-
-    </dl>
+<div class="div-neon" style="width: 550px; height: 200px; z-index: 1; position: absolute;">
+    <p class="p-neon">
+        <span class="span-neon">-</span>
+        <span class="span-neon">D</span>
+        <span class="span-neon">A</span>
+        <span class="span-neon">R</span>
+        <span class="span-neon">T</span>
+        <span class="span-neon">I</span>
+        <span class="span-neon">N</span>
+        <span class="span-neon">'</span>
+        <span class="span-neon">-</span>
+        <span class="with-friends">WITH FRIENDS</span>
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+
+
+<div class="col-md-8 details-match">
+    <section id="loginForm">
+        <h2>Match Details</h2>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Match ID
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MatchId)
+            </dd>
+
+            <dt>
+                Match Setup ID
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MatchSetupId)
+            </dd>
+
+            <dt>
+                Player 1 Still to Score
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PlayerOneNeededScore)
+            </dd>
+
+            <dt>
+                Player 2 Still to Score
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PlayerTwoNeededScore)
+            </dd>
+
+            <dt>
+                Player 1 Average Score
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PlayerOneAvgRoundScore)
+            </dd>
+
+            <dt>
+                Player 2 Averge Score
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PlayerTwoAvgRoundScore)
+            </dd>
+
+        </dl>
+        <p>
+            @*@Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |*@
+            @Html.ActionLink("Back to List", "Index", "MatchSetup", new { area = "" }, new { @style = "border: 1px solid white; color: white; border-radius: 5px; padding: 3px; text-decoration: none" })
+        </p>
+    </section>
+</div>

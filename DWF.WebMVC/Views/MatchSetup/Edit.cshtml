@@ -4,49 +4,65 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>MatchSetupEdit</h2>
 
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-
-    <div class="form-horizontal">
-        <h4>MatchSetupEdit</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.MatchSetupId)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PlayerOneEmail, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PlayerOneEmail, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PlayerOneEmail, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PlayerTwoEmail, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @{
-                    var playerTwoEmail = Model.PlayerTwoEmail;
-                    @Html.EditorFor(model => model.PlayerTwoEmail, new { email = playerTwoEmail, htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.PlayerTwoEmail, "", new { @class = "text-danger" })
-                }
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
+<div class="div-neon" style="width: 550px; height: 200px; z-index: 1; position: absolute;">
+    <p class="p-neon">
+        <span class="span-neon">-</span>
+        <span class="span-neon">D</span>
+        <span class="span-neon">A</span>
+        <span class="span-neon">R</span>
+        <span class="span-neon">T</span>
+        <span class="span-neon">I</span>
+        <span class="span-neon">N</span>
+        <span class="span-neon">'</span>
+        <span class="span-neon">-</span>
+        <span class="with-friends">WITH FRIENDS</span>
+    </p>
 </div>
+
+
+<div class="col-md-8 edit-matchsetup">
+    <section id="loginForm">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.MatchSetupId)
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.PlayerOneEmail, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.PlayerOneEmail, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.PlayerOneEmail, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.PlayerTwoEmail, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @{
+                            var playerTwoEmail = Model.PlayerTwoEmail;
+                            @Html.EditorFor(model => model.PlayerTwoEmail, new { email = playerTwoEmail, htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PlayerTwoEmail, "", new { @class = "text-danger" })
+                        }
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+            <div>
+                @Html.ActionLink("Back to List", "Index", "MatchSetup", new { area = "" }, new { @style = "border: 1px solid white; color: white; border-radius: 5px; padding: 3px; text-decoration: none" })
+            </div>
+        }
+    </section>
+</div>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

@@ -17,9 +17,47 @@ body {
 
 .login-form {
     background-color: rgba(0, 0, 0, .7);
-    width: 800px;
+    width: 30em;
     margin: auto; 
     z-index: 100;
+    padding: 10px;
+    top: 22em;
+    border: solid 2px white;
+    border-radius: 5px;
+    display: inline-block;
+    justify-content: center;
+    left: 2vw;
+}
+
+.edit-matchsetup {
+    background-color: rgba(0, 0, 0, .7);
+    width: 50em;
+    margin: auto;
+    z-index: 100;
+    padding: 10px;
+    top: 22em;
+    border: solid 2px white;
+    border-radius: 5px;
+    display: inline-block;
+    justify-content: center;
+    left: 2vw;
+    color: white;
+}
+
+.details-match {
+    background-color: rgba(0, 0, 0, .7);
+    width: 30em;
+    margin: auto;
+    z-index: 100;
+    padding: 10px;
+    top: 22em;
+    border: solid 2px white;
+    border-radius: 5px;
+    display: inline-block;
+    justify-content: center;
+    left: 2vw;
+    color: white;
+}
 }
 
 .about{
@@ -188,12 +226,18 @@ textarea {
 }
 
 .create-match-form {
-    margin-top: 350px;
-    margin-left: -120px;
     background-color: rgba(0, 0, 0, .7);
-    padding-top: 10px;
-    padding-bottom: 10px;
-    z-index: 100;
+    width: 30em;
+    margin: auto;
+    z-index: 1000;
+    padding: 10px;
+    /*top: 22em;*/
+    border: solid 2px white;
+    border-radius: 5px;
+    display: inline-block;
+    justify-content: center;
+    /*left: 2vw;*/
+
 }
 
 .create-match-label {

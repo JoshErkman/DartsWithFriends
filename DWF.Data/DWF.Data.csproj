@@ -57,41 +57,9 @@
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Match.cs" />
     <Compile Include="MatchSetup.cs" />
-    <Compile Include="Migrations\202104192244581_initialMigration.cs" />
-    <Compile Include="Migrations\202104192244581_initialMigration.Designer.cs">
-      <DependentUpon>202104192244581_initialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104282350101_add-migration AddedRoundsToMatch.cs" />
-    <Compile Include="Migrations\202104282350101_add-migration AddedRoundsToMatch.Designer.cs">
-      <DependentUpon>202104282350101_add-migration AddedRoundsToMatch.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104290028177_DeletedSetsAndLegs.cs" />
-    <Compile Include="Migrations\202104290028177_DeletedSetsAndLegs.Designer.cs">
-      <DependentUpon>202104290028177_DeletedSetsAndLegs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104290045006_PlayerOneRoundPlayerTwoRoundAdded.cs" />
-    <Compile Include="Migrations\202104290045006_PlayerOneRoundPlayerTwoRoundAdded.Designer.cs">
-      <DependentUpon>202104290045006_PlayerOneRoundPlayerTwoRoundAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104290125594_AddedIsTurn.cs" />
-    <Compile Include="Migrations\202104290125594_AddedIsTurn.Designer.cs">
-      <DependentUpon>202104290125594_AddedIsTurn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104300338509_totalRoundPoints.cs" />
-    <Compile Include="Migrations\202104300338509_totalRoundPoints.Designer.cs">
-      <DependentUpon>202104300338509_totalRoundPoints.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104301615068_AddedTotalMatchPoints.cs" />
-    <Compile Include="Migrations\202104301615068_AddedTotalMatchPoints.Designer.cs">
-      <DependentUpon>202104301615068_AddedTotalMatchPoints.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105031432105_AddedIsStarred.cs" />
-    <Compile Include="Migrations\202105031432105_AddedIsStarred.Designer.cs">
-      <DependentUpon>202105031432105_AddedIsStarred.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105031439359_IsStarredToPlayers.cs" />
-    <Compile Include="Migrations\202105031439359_IsStarredToPlayers.Designer.cs">
-      <DependentUpon>202105031439359_IsStarredToPlayers.cs</DependentUpon>
+    <Compile Include="Migrations\202105092254573_initcreate.cs" />
+    <Compile Include="Migrations\202105092254573_initcreate.Designer.cs">
+      <DependentUpon>202105092254573_initcreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -102,32 +70,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202104192244581_initialMigration.resx">
-      <DependentUpon>202104192244581_initialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104282350101_add-migration AddedRoundsToMatch.resx">
-      <DependentUpon>202104282350101_add-migration AddedRoundsToMatch.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104290028177_DeletedSetsAndLegs.resx">
-      <DependentUpon>202104290028177_DeletedSetsAndLegs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104290045006_PlayerOneRoundPlayerTwoRoundAdded.resx">
-      <DependentUpon>202104290045006_PlayerOneRoundPlayerTwoRoundAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104290125594_AddedIsTurn.resx">
-      <DependentUpon>202104290125594_AddedIsTurn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104300338509_totalRoundPoints.resx">
-      <DependentUpon>202104300338509_totalRoundPoints.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104301615068_AddedTotalMatchPoints.resx">
-      <DependentUpon>202104301615068_AddedTotalMatchPoints.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105031432105_AddedIsStarred.resx">
-      <DependentUpon>202105031432105_AddedIsStarred.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105031439359_IsStarredToPlayers.resx">
-      <DependentUpon>202105031439359_IsStarredToPlayers.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105092254573_initcreate.resx">
+      <DependentUpon>202105092254573_initcreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -2,9 +2,24 @@
 @model LoginViewModel
 
 
+<div class="div-neon" style="width: 550px; height: 200px; z-index: 1; position: absolute;">
+    <p class="p-neon">
+        <span class="span-neon">-</span>
+        <span class="span-neon">D</span>
+        <span class="span-neon">A</span>
+        <span class="span-neon">R</span>
+        <span class="span-neon">T</span>
+        <span class="span-neon">I</span>
+        <span class="span-neon">N</span>
+        <span class="span-neon">'</span>
+        <span class="span-neon">-</span>
+        <span class="with-friends">WITH FRIENDS</span>
+    </p>
+</div>
 
-<div class="login-form">
-    <div class="col-md-8">
+
+<div>
+    <div class="col-md-8 login-form">
         <section id="loginForm">
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
@@ -39,7 +54,7 @@
                     </div>
                 </div>
                 <p>
-                    @Html.ActionLink("Register as a new user", "Register")
+                    @Html.ActionLink("Register as a new user", "Register", "", new { area = "" }, new { @style = "border: 1px solid white; color: white; border-radius: 5px; padding: 3px; text-decoration: none" })
                 </p>
                 @* Enable this once you have account confirmation enabled for password reset functionality
                     <p>
