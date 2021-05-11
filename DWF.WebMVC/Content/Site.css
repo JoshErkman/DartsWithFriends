@@ -29,6 +29,30 @@ body {
     left: 2vw;
 }
 
+.delete-matchsetup {
+    background-color: rgba(0, 0, 0, .7);
+    width: 50em;
+    margin: auto;
+    z-index: 100;
+    padding: 10px;
+    top: 6em;
+    border: solid 2px white;
+    border-radius: 5px;
+    display: inline-block;
+    justify-content: center;
+    left: 2vw;
+    color: white;
+}
+
+.delete-btn {
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    padding: 2px;
+    text-decoration: none
+}
+
 .edit-matchsetup {
     background-color: rgba(0, 0, 0, .7);
     width: 50em;
@@ -74,13 +98,13 @@ body {
     z-index: 100;
 }
 
-.delete-matchsetup{
+/*.delete-matchsetup{
     color: white;
     width: 300px;
     margin-left: 50px;
     margin-top: 80px;
     font-size: medium;
-}
+}*/
 
 .address {
     color: white;
