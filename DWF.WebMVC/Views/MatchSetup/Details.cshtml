@@ -1,0 +1,57 @@
+﻿@model DWF.Models.MatchSetup.MatchSetupDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="div-neon" style="width: 550px; height: 200px; z-index: 1; position: absolute;">
+    <p class="p-neon">
+        <span class="span-neon">-</span>
+        <span class="span-neon">D</span>
+        <span class="span-neon">A</span>
+        <span class="span-neon">R</span>
+        <span class="span-neon">T</span>
+        <span class="span-neon">I</span>
+        <span class="span-neon">N</span>
+        <span class="span-neon">'</span>
+        <span class="span-neon">-</span>
+        <span class="with-friends">WITH FRIENDS</span>
+    </p>
+</div>
+
+<h2>MatchSetupDetails</h2>
+
+<div>
+    <h4>MatchSetupDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MatchSetupId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MatchSetupId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlayerOneEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlayerOneEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlayerTwoEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlayerTwoEmail)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

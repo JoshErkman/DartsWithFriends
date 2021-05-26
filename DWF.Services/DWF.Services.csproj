@@ -54,11 +54,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MatchService.cs" />
+    <Compile Include="MatchSetupService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoundService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DWF.Data\DWF.Data.csproj">
+      <Project>{c17ae4bf-2f89-450e-89a0-3cbaa457983a}</Project>
+      <Name>DWF.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DWF.Models\DWF.Models.csproj">
+      <Project>{a35c8e74-6efb-4cc3-8222-df0cd3cacd21}</Project>
+      <Name>DWF.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

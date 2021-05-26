@@ -1,0 +1,48 @@
+﻿@model DWF.Models.Round.RoundDetail
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>DeleteRound</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>RoundDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RoundId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoundId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalPoints)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalPoints)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MatchId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MatchId)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

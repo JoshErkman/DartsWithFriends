@@ -55,11 +55,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Match.cs" />
+    <Compile Include="MatchSetup.cs" />
+    <Compile Include="Migrations\202105092254573_initcreate.cs" />
+    <Compile Include="Migrations\202105092254573_initcreate.Designer.cs">
+      <DependentUpon>202105092254573_initcreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Round.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202105092254573_initcreate.resx">
+      <DependentUpon>202105092254573_initcreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

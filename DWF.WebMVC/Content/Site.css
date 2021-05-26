@@ -1,6 +1,123 @@
-﻿body {
+﻿@import url(https://fonts.googleapis.com/css?family=Roboto:100);
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url('Assets/bluedartboard.jfif');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.table-background{
+    background-color: rgba(0, 0, 0, .7);
+    width: 800px;
+    margin: auto;
+    z-index: 100;
+}
+
+.login-form {
+    background-color: rgba(0, 0, 0, .7);
+    width: 30em;
+    margin: auto; 
+    z-index: 100;
+    padding: 10px;
+    top: 22em;
+    border: solid 2px white;
+    border-radius: 5px;
+    display: inline-block;
+    justify-content: center;
+    left: 2vw;
+}
+
+.delete-matchsetup {
+    background-color: rgba(0, 0, 0, .7);
+    width: 50em;
+    margin: auto;
+    z-index: 100;
+    padding: 10px;
+    top: 6em;
+    border: solid 2px white;
+    border-radius: 5px;
+    display: inline-block;
+    justify-content: center;
+    left: 2vw;
+    color: white;
+}
+
+.delete-btn {
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    padding: 2px;
+    text-decoration: none
+}
+
+.edit-matchsetup {
+    background-color: rgba(0, 0, 0, .7);
+    width: 50em;
+    margin: auto;
+    z-index: 100;
+    padding: 10px;
+    top: 22em;
+    border: solid 2px white;
+    border-radius: 5px;
+    display: inline-block;
+    justify-content: center;
+    left: 2vw;
+    color: white;
+}
+
+.details-match {
+    background-color: rgba(0, 0, 0, .7);
+    width: 30em;
+    margin: auto;
+    z-index: 100;
+    padding: 10px;
+    top: 22em;
+    border: solid 2px white;
+    border-radius: 5px;
+    display: inline-block;
+    justify-content: center;
+    left: 2vw;
+    color: white;
+}
+}
+
+.about{
+    color: white;
+    width: 300px;
+    margin-left: 80px;
+    margin-top: 80px;
+    font-size: medium;
+    text-align: center;
+    background-color: rgba(0, 0, 0, .3);
+    padding: 10px;
+    border-radius: 20%;
+    position: relative;
+    z-index: 100;
+}
+
+/*.delete-matchsetup{
+    color: white;
+    width: 300px;
+    margin-left: 50px;
+    margin-top: 80px;
+    font-size: medium;
+}*/
+
+.address {
+    color: white;
+    width: 300px;
+    margin-left: 80px;
+    margin-top: 80px;
+    font-size: medium;
+    text-align: center;
+    background-color: rgba(0, 0, 0, .3);
+    padding: 10px;
+    border-radius: 20%;
+    position: relative;
+    z-index: 100;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +138,312 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.register-indicator{
+    color: white;
+    text-align: right;
+    margin-right: 285px;
+    margin-top: -250px;
+}
+
+.span-reg{
+    text-align: center;
+
+}
+
+.button {
+    padding-bottom: 20px;
+    margin-top: 100px;
+    margin-left: 150px;
+    line-height: 35px;
+    height: 50px;
+    text-align: center;
+    width: 250px;
+    cursor: pointer;
+}
+
+.create-matchsetup{
+    font-size: 30px;
+}
+
+.btn-one {
+    color: #FFF;
+    transition: all 0.3s;
+    position: relative;
+}
+
+    .btn-one span {
+        transition: all 0.3s;
+    }
+
+    .btn-one::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: 0;
+        transition: all 0.3s;
+        border-top-width: 1px;
+        border-bottom-width: 1px;
+        border-top-style: solid;
+        border-bottom-style: solid;
+        border-top-color: rgba(255,255,255,0.5);
+        border-bottom-color: rgba(255,255,255,0.5);
+        transform: scale(0.1, 1);
+    }
+
+    .btn-one:hover span {
+        letter-spacing: 2px;
+    }
+
+    .btn-one:hover::before {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .btn-one::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: all 0.3s;
+        background-color: rgba(255,255,255,0.1);
+    }
+
+    .btn-one:hover::after {
+        opacity: 0;
+        transform: scale(0.1, 1);
+    }
+
+.logo {
+    margin-top: 100px;
+    margin-left: -120px;
+}
+
+.plogo1 {
+    color: white;
+    text-align: center;
+    font-family: Dubai;
+    font-size: 100px;
+    margin-bottom: -40px;
+}
+
+.plogo2 {
+    color: white;
+    text-align: center;
+    font-family: 'Copperplate Gothic Light', sans-serif;
+    font-size: 50px;
+}
+
+.create-match-form {
+    background-color: rgba(0, 0, 0, .7);
+    width: 30em;
+    margin: auto;
+    z-index: 1000;
+    padding: 10px;
+    /*top: 22em;*/
+    border: solid 2px white;
+    border-radius: 5px;
+    display: inline-block;
+    justify-content: center;
+    /*left: 2vw;*/
+
+}
+
+.create-match-label {
+    color: white;
+}
+
+.match-label {
+    color: white;
+}
+
+.div-match {
+    margin-right: 400px;
+}
+
+.pubtable{
+    width: 1200px;
+    margin-top: 500px;
+    padding-left: -20px;
+    margin-bottom: 0;
+    
+}
+
+
+/*FLYING DART*/
+
+.flier {
+    pointer-events: none;
+}
+
+    .flier > * {
+        animation: fly 50s linear infinite;
+        pointer-events: none !important;
+        top: 0;
+        left: 0;
+        transform: translateX(-120%) translateY(-120%) rotateZ(0);
+        position: fixed;
+        animation-delay: 1s;
+        z-index: 999999;
+    }
+
+@keyframes fly {
+
+    98.001%, 0% {
+        display: block;
+        transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
+    }
+
+    15% {
+        transform: translateX(100vw) translateY(-100%) rotateZ(180deg)
+    }
+
+    15.001%, 18% {
+        transform: translateX(100vw) translateY(-30%) rotateZ(0deg)
+    }
+
+    40% {
+        transform: translateX(-200%) translateY(3vh) rotateZ(-180deg)
+    }
+
+    40.001%, 43% {
+        transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)
+    }
+
+    65% {
+        transform: translateX(100vw) translateY(50vh) rotateZ(0deg)
+    }
+
+    65.001%, 68% {
+        transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
+    }
+
+    95% {
+        transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
+    }
+}
+
+
+
+/* NEON LOGO */
+
+
+.div-neon {
+    --text-color: #f00;
+    --border-color: #3da7f8;
+    --animation-time: 1s;
+    --text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 5px var(--text-color), 0 0 10px var(--text-color), 0 0 10px var(--text-color), 0 0 10px var(--text-color), 0 0 10px var(--text-color), 0 0 20px var(--text-color), 0 0 30px var(--text-color), 0 0 40px var(--text-color), 0 0 55px var(--text-color), 0 0 75px var(--text-color);
+    --box-shadow: inset 0 0 50px var(--border-color), 0 0 10px var(--border-color), 0 0 20px var(--border-color), 0 0 30px var(--border-color);
+}
+
+.div-neon {
+    width: 300px;
+    margin: 0px;
+    margin-top: 50px;
+    margin-left: 30px;
+    background: #00061c;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+
+.div-neon {
+    background-color: transparent;
+    border: 3px solid rgba(255, 255, 255, 0.33);
+    border-radius: 50px;
+    padding: 0px 20px;
+    transform: rotate(-6deg);
+    animation: turnOnBorder 0.24s forwards step-end, flickerBorder calc(var(--animation-time) * 16) infinite step-end 1s;
+}
+
+.p-neon {
+    font-family: Roboto;
+    margin: 0px;
+    margin-left: 20px;
+    color: #fff;
+}
+
+.span-neon {
+    font-size: 100px;
+}
+
+.with-friends {
+    font-size: 50px;
+    margin-left: 95px;
+    margin-top: 100px;
+    font-size: 40px;
+    padding-top: 400px;
+}
+
+p span {
+    opacity: 0.33;
+    animation: turnOn forwards step-end;
+}
+
+    p span:nth-child(1) {
+        animation-delay: 0.3s;
+    }
+
+    p span:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+
+    p span:nth-child(3) {
+        animation-delay: 0.4s;
+    }
+
+    p span:nth-child(4) {
+        animation: turnOn 0.27s forwards step-end, flicker var(--animation-time) infinite step-end 1s;
+    }
+
+@keyframes turnOnBorder {
+    100% {
+        border: 3px solid #fff;
+        box-shadow: var(--box-shadow);
+        opacity: 1;
+    }
+}
+
+@keyframes turnOn {
+    100% {
+        text-shadow: var(--text-shadow);
+        opacity: 1;
+    }
+}
+
+@keyframes flicker {
+    0% {
+        text-shadow: var(--text-shadow);
+    }
+
+    99% {
+        text-shadow: none;
+    }
+}
+
+@keyframes flickerBorder {
+    0% {
+        box-shadow: var(--box-shadow);
+    }
+
+    99% {
+        box-shadow: none;
+    }
 }

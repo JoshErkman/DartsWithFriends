@@ -14,3 +14,5 @@ C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\bin\Debug\Micr
 C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\obj\Debug\DWF.Data.csproj.CopyComplete
 C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\obj\Debug\DWF.Data.dll
 C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\obj\Debug\DWF.Data.pdb
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\obj\Debug\DWF.Data.Migrations.initcreate.resources
+C:\Users\erkma\Desktop\ElevenFiftyProjects\Red Badge\DWF\DWF.Data\obj\Debug\DWF.Data.csproj.GenerateResource.cache

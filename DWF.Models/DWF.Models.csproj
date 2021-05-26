@@ -54,11 +54,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Match\MatchCreate.cs" />
+    <Compile Include="MatchSetup\MatchSetupCreate.cs" />
+    <Compile Include="MatchSetup\MatchSetupDetail.cs" />
+    <Compile Include="MatchSetup\MatchSetupEdit.cs" />
+    <Compile Include="MatchSetup\MatchSetupListItem.cs" />
+    <Compile Include="Match\MatchDetail.cs" />
+    <Compile Include="Match\RoundCreateMatchEdit.cs" />
+    <Compile Include="Match\MatchListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Round\RoundDetail.cs" />
+    <Compile Include="Round\RoundEdit.cs" />
+    <Compile Include="Round\RoundListItem.cs" />
+    <Compile Include="UserInfo\UserInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
